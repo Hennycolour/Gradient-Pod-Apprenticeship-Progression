@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Working Page - Artisan Directory</title>
+  <link rel="stylesheet" href="css/brand.css">
+  <style>
+    /* Page-specific layout */
+    .directory {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--s3);
+      margin-top: var(--s4);
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--s3);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .card h2 {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      margin-bottom: var(--s2);
+      color: var(--brand-dark);
+    }
+
+    .card p {
+      margin: 0 0 var(--s2);
+      color: var(--ink);
+    }
+
+    .card .muted {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive: works at phone width */
+    @media (max-width: 480px) {
+      .card {
+        padding: var(--s2);
+      }
+      .card h2 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Artisan Directory</h1>
+    <p class="intro">Browse local artisans and their services. Each entry is specific, real, and easy to scan.</p>
+
+    <section class="directory">
+      <!-- Example entries -->
+      <article class="card">
+        <h2>Mary Wanjiru – Tailor</h2>
+        <p>Specializes in school uniforms and custom dresses. Located at Gikomba Market, Nairobi.</p>
+        <p class="muted">Price range: KSh 500 – 2,500 per item</p>
+      </article>
+
+      <article class="card">
+        <h2>Peter Otieno – Carpenter</h2>
+        <p>Handmade furniture: beds, tables, and cabinets. Workshop at Kisumu’s Oginga Odinga Street.</p>
+        <p class="muted">Average turnaround: 5–7 days</p>
+      </article>
+
+      <article class="card">
+        <h2>Fatuma Ali – Weaver</h2>
+        <p>Produces traditional kiondo baskets using sisal and leather straps. Based in Machakos town.</p>
+        <p class="muted">Price range: KSh 800 – 1,800 per basket</p>
+      </article>
+
+      <article class="card">
+        <h2>Joseph Mwangi – Metalwork</h2>
+        <p>Fabricates gates, grills, and farm tools. Workshop near Thika Road, Nairobi.</p>
+        <p class="muted">Custom quotes available</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
