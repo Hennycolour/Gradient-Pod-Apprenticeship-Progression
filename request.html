@@ -1,0 +1,71 @@
+<!--
+	This flow moves from identity and skill level to measurable hours, then to
+	open reflection, so the form follows the apprentice's progression naturally.
+	Terracotta focus states make the active field easy to find and help keyboard
+	users understand where their input will go. Every page uses brand.css tokens
+	for typography, color, spacing, and interaction states so the experience
+	remains consistent as it grows.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Record an apprentice's current progress and reflections.">
+	<title>Progress Request | Apprentice Progression</title>
+	<link rel="stylesheet" href="css/brand.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="site-header__inner">
+			<a class="brand-link" href="get-started.html" aria-label="Apprentice Progression home">
+				<img src="Logo.jpeg" alt="Gradient Pod Apprenticeship logo" class="logo">
+				<span class="brand-mark">Apprentice Progression</span>
+			</a>
+		</div>
+	</header>
+
+	<main class="page-container">
+		<section class="form-shell" aria-labelledby="request-heading">
+			<p class="eyebrow">Progress check-in</p>
+			<h1 id="request-heading">Record a milestone.</h1>
+			<p class="form-intro">Share the latest progress so the next stage of learning has a clear starting point.</p>
+
+			<form class="form" action="#" method="post">
+				<div class="field">
+					<label for="apprentice-name">Apprentice Name</label>
+					<input id="apprentice-name" name="apprentice-name" type="text" autocomplete="name" required>
+				</div>
+
+				<div class="field">
+					<label for="mentor-name">Mentor Name</label>
+					<input id="mentor-name" name="mentor-name" type="text" autocomplete="additional-name" required>
+				</div>
+
+				<div class="field">
+					<label for="skill-level">Current Skill Level</label>
+					<select id="skill-level" name="skill-level">
+						<option value="beginner">Beginner</option>
+						<option value="intermediate">Intermediate</option>
+						<option value="advanced">Advanced</option>
+					</select>
+				</div>
+
+				<div class="field">
+					<label for="hours-completed">Hours Completed</label>
+					<input id="hours-completed" name="hours-completed" type="number" min="0" step="1" required>
+				</div>
+
+				<div class="field">
+					<label for="notes">Notes / Reflections</label>
+					<textarea id="notes" name="notes"></textarea>
+				</div>
+
+				<div class="form__actions">
+					<button class="button" type="submit">Submit Progress</button>
+				</div>
+			</form>
+		</section>
+	</main>
+</body>
+</html>

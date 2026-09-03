@@ -1,0 +1,232 @@
+:root {
+  --color-navy: #1B3A57;
+  --color-dark-navy: #13293D;
+  --color-terracotta: #D9822B;
+  --color-ink: #243447;
+  --color-muted: #5D6B78;
+  --color-paper: #F8F5F0;
+  --color-white: #FFFFFF;
+  --color-border: #C8D0D6;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 5rem;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: "Trebuchet MS", Arial, sans-serif;
+  --radius: 0.5rem;
+  --shadow: 0 1rem 3rem rgba(19, 41, 61, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  min-width: 18rem;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.site-header {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: var(--space-3) var(--space-4);
+}
+
+.site-header__inner,
+.page-container {
+  margin: 0 auto;
+  max-width: 48rem;
+}
+
+.site-header__inner {
+  align-items: center;
+  display: flex;
+}
+
+.brand-link {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+
+.logo {
+  background: var(--color-dark-navy);
+  border: 2px solid var(--color-terracotta);
+  border-radius: 50%;
+  height: 3.25rem;
+  object-fit: cover;
+  width: 3.25rem;
+}
+
+.brand-mark {
+  color: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.page-container {
+  padding: var(--space-6) var(--space-4);
+}
+
+.hero {
+  display: grid;
+  min-height: calc(100vh - 4.25rem);
+  place-items: center;
+  text-align: center;
+}
+
+.hero__content {
+  max-width: 42rem;
+}
+
+.eyebrow {
+  color: var(--color-terracotta);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 var(--space-2);
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  color: var(--color-navy);
+  font-family: var(--font-display);
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.hero__intro {
+  color: var(--color-muted);
+  font-size: 1.15rem;
+  margin: var(--space-4) auto var(--space-5);
+  max-width: 36rem;
+}
+
+.button {
+  background: var(--color-navy);
+  border: 2px solid var(--color-navy);
+  border-radius: var(--radius);
+  color: var(--color-white);
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  padding: var(--space-2) var(--space-4);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.button:hover {
+  background: var(--color-dark-navy);
+  border-color: var(--color-dark-navy);
+  transform: translateY(-1px);
+}
+
+.button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-terracotta);
+  outline-offset: 3px;
+}
+
+.form-shell {
+  background: var(--color-white);
+  border-top: 0.35rem solid var(--color-terracotta);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+  max-width: 42rem;
+  padding: var(--space-5);
+}
+
+.form-intro {
+  color: var(--color-muted);
+  margin: var(--space-2) 0 var(--space-5);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+label {
+  color: var(--color-navy);
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  background: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-ink);
+  font: inherit;
+  padding: var(--space-2) var(--space-3);
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-terracotta);
+  box-shadow: 0 0 0 4px rgba(217, 130, 43, 0.22);
+  outline: none;
+}
+
+textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.form__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 36rem) {
+  .page-container {
+    padding: var(--space-5) var(--space-3);
+  }
+
+  .form-shell {
+    padding: var(--space-4);
+  }
+}
