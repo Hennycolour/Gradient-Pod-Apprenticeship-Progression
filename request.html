@@ -39,7 +39,7 @@
 
 				<div class="field">
 					<label for="mentor-name">Mentor Name</label>
-					<input id="mentor-name" name="mentor-name" type="text" autocomplete="additional-name" required>
+					<input id="mentor-name" name="mentor-name" type="text" autocomplete="name" required>
 				</div>
 
 				<div class="field">
@@ -62,10 +62,21 @@
 				</div>
 
 				<div class="form__actions">
-					<button class="button" type="submit">Submit Progress</button>
+					<button class="button" type="submit">Save Progress</button>
 				</div>
+
+				<p class="confirmation" id="confirmation" role="status" aria-live="polite" hidden>
+					Progress saved. Your mentor can now review this milestone and discuss the next step with you.
+				</p>
 			</form>
 		</section>
 	</main>
+
+	<script>
+		document.querySelector('.form').addEventListener('submit', function (event) {
+			event.preventDefault();
+			document.querySelector('#confirmation').hidden = false;
+		});
+	</script>
 </body>
 </html>

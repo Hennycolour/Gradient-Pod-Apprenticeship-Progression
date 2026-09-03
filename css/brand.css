@@ -221,6 +221,15 @@ textarea {
   margin-top: var(--space-2);
 }
 
+.confirmation {
+  background: rgba(27, 58, 87, 0.08);
+  border-left: 0.3rem solid var(--color-terracotta);
+  color: var(--color-navy);
+  font-weight: 700;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+}
+
 @media (max-width: 36rem) {
   .page-container {
     padding: var(--space-5) var(--space-3);
