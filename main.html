@@ -1,85 +1,67 @@
-<!DOCTYPE html>
+<!--
+  The Artisan Directory is the main working page for browsing trusted local
+  craft practitioners and the services they offer.
+-->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Main Working Page - Artisan Directory</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse local artisans and the craft services they provide.">
+  <title>Artisan Directory | Apprentice Progression</title>
   <link rel="stylesheet" href="css/brand.css">
-  <style>
-    /* Page-specific layout */
-    .directory {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--s3);
-      margin-top: var(--s4);
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: var(--s3);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .card h2 {
-      font-family: var(--display);
-      font-size: 1.25rem;
-      margin-bottom: var(--s2);
-      color: var(--brand-dark);
-    }
-
-    .card p {
-      margin: 0 0 var(--s2);
-      color: var(--ink);
-    }
-
-    .card .muted {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* Responsive: works at phone width */
-    @media (max-width: 480px) {
-      .card {
-        padding: var(--s2);
-      }
-      .card h2 {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
 </head>
 <body>
-  <main class="wrap">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand-link" href="get-started.html" aria-label="Apprentice Progression home">
+        <img src="Logo.jpeg" alt="Gradient Pod Apprenticeship logo" class="logo">
+        <span class="brand-mark">Apprentice Progression</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="get-started.html">Get Started</a>
+        <a href="request.html">Request Progress</a>
+        <a href="main.html" aria-current="page">Artisan Directory</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="directory-container">
+    <p class="eyebrow">Local craft network</p>
     <h1>Artisan Directory</h1>
-    <p class="intro">Browse local artisans and their services. Each entry is specific, real, and easy to scan.</p>
+    <p class="directory-intro">Browse local practitioners whose workshops support hands-on learning and dependable commissions.</p>
 
     <section class="directory">
-      <!-- Example entries -->
-      <article class="card">
-        <h2>Mary Wanjiru – Tailor</h2>
-        <p>Specializes in school uniforms and custom dresses. Located at Gikomba Market, Nairobi.</p>
-        <p class="muted">Price range: KSh 500 – 2,500 per item</p>
+      <article class="directory-card">
+        <h2>Mary Wanjiru</h2>
+        <p>Tailor specializing in school uniforms and custom dresses at Gikomba Market, Nairobi.</p>
+        <p class="directory-card__detail">Typical commission: KSh 500-2,500 per item</p>
       </article>
 
-      <article class="card">
-        <h2>Peter Otieno – Carpenter</h2>
-        <p>Handmade furniture: beds, tables, and cabinets. Workshop at Kisumu’s Oginga Odinga Street.</p>
-        <p class="muted">Average turnaround: 5–7 days</p>
+      <article class="directory-card">
+        <h2>Peter Otieno</h2>
+        <p>Carpenter making beds, tables, and cabinets from his workshop on Oginga Odinga Street, Kisumu.</p>
+        <p class="directory-card__detail">Average turnaround: 5-7 days</p>
       </article>
 
-      <article class="card">
-        <h2>Fatuma Ali – Weaver</h2>
-        <p>Produces traditional kiondo baskets using sisal and leather straps. Based in Machakos town.</p>
-        <p class="muted">Price range: KSh 800 – 1,800 per basket</p>
+      <article class="directory-card">
+        <h2>Fatuma Ali</h2>
+        <p>Weaver producing traditional kiondo baskets with sisal and leather straps in Machakos town.</p>
+        <p class="directory-card__detail">Typical commission: KSh 800-1,800 per basket</p>
       </article>
 
-      <article class="card">
-        <h2>Joseph Mwangi – Metalwork</h2>
-        <p>Fabricates gates, grills, and farm tools. Workshop near Thika Road, Nairobi.</p>
-        <p class="muted">Custom quotes available</p>
+      <article class="directory-card">
+        <h2>Joseph Mwangi</h2>
+        <p>Metalworker fabricating gates, grills, and farm tools near Thika Road, Nairobi.</p>
+        <p class="directory-card__detail">Custom quotes available for measured work</p>
       </article>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>Apprentice Progression for Gradient Pod artisans.</p>
+    </div>
+  </footer>
 </body>
 </html>
