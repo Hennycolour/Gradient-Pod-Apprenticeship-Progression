@@ -1,16 +1,16 @@
-<!--
-  The Artisan Directory is the main working page for browsing trusted local
-  craft practitioners and the services they offer.
--->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Browse local artisans and the craft services they provide.">
-  <title>Artisan Directory | Apprentice Progression</title>
-  <link rel="stylesheet" href="css/brand.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apprentice Directory · TailorTrack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/main.css">
 </head>
+<body></head>s
 <body>
   <header class="site-header">
     <div class="site-header__inner">
@@ -26,13 +26,31 @@
     </div>
   </header>
 
-  <main class="directory-container">
-    <p class="eyebrow">THE WORKSHOP DIRECTORY</p>
-    <h1>Artisan Directory</h1>
-    <p class="directory-intro"> Browse apprentices and see where they are
-                        in their tailoring journey.</p>
+      <main>
 
-     <div class="directory-controls">
+        <section class="directory-section">
+
+            <div class="wrap">
+
+                <!-- INTRO -->
+
+                <div class="directory-intro">
+
+                    <p class="eyebrow">THE WORKSHOP DIRECTORY</p>
+
+                    <h1>Apprentice Directory</h1>
+
+                    <p class="intro-text">
+                        Browse apprentices and see where they are
+                        in their tailoring journey.
+                    </p>
+
+                </div>
+
+
+                <!-- SEARCH + FILTER -->
+
+                <div class="directory-controls">
 
                     <div class="search-box">
 
@@ -46,6 +64,7 @@
                         >
 
                     </div>
+
 
                     <div class="filter-box">
 
@@ -65,19 +84,38 @@
 
                 </div>
 
-    <section class="directory">
-      <article class="directory-card"
+
+                <!-- RESULTS COUNT -->
+
+                <div class="directory-meta">
+                    <span id="resultCount">6 apprentices</span>
+                </div>
+
+
+                <!-- APPRENTICE GRID -->
+
+                <div class="apprentice-grid" id="apprenticeGrid">
+
+
+                    <!-- CARD 1 -->
+
+                    <article
+                        class="apprentice-card"
                         data-name="Tunde Adeyemi"
                         data-stage="5"
                     >
 
-                    <div class="apprentice-photo">
+                        <div class="apprentice-photo">
 
                             <img
                                 src="Tunde.jpeg"
                                 alt="Tunde Adeyemi"
                             >
-                            <div class="card-content">
+
+                        </div>
+
+
+                        <div class="card-content">
 
                             <div class="card-heading">
 
@@ -91,12 +129,15 @@
 
                             </div>
 
+
                             <p class="skill-focus">
                                 Garment Construction
                             </p>
-                        </div>
 
-                        <div class="progress-label">
+
+                            <div class="progress-section">
+
+                                <div class="progress-label">
 
                                     <span>Progress</span>
 
@@ -111,7 +152,12 @@
                                         style="width: 78%;"
                                     ></div>
 
-                                    <div class="apprentice-details">
+                                </div>
+
+                            </div>
+
+
+                            <div class="apprentice-details">
 
                                 <p>
                                     <span class="detail-icon">⌖</span>
@@ -121,6 +167,94 @@
                                 <p>
                                     <span class="detail-icon">✦</span>
                                     Master: Mrs. Bello
+                                </p>
+
+                            </div>
+
+
+                            <div class="skills-verified">
+
+                                <span class="check">✓</span>
+
+                                14 skills verified
+
+                            </div>
+
+
+                            <a href="#" class="view-progress">
+                                View Progress <a href="details.html" class="view-progress">
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- CARD 2 -->
+
+                    <article
+                        class="apprentice-card"
+                        data-name="Aisha Lawal"
+                        data-stage="3"
+                    >
+
+                        <div class="apprentice-photo">
+
+                            <img
+                                src="Aishat.jpeg"
+                                alt="Aisha Lawal"
+                            >
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <h2>Aisha Lawal</h2>
+
+                            <span class="stage">
+                                Stage 3
+                            </span>
+
+                            <p class="skill-focus">
+                                Measurement &amp; Cutting
+                            </p>
+
+
+                            <div class="progress-section">
+
+                                <div class="progress-label">
+
+                                    <span>Progress</span>
+
+                                    <strong>61%</strong>
+
+                                </div>
+
+                                <div class="progress-track">
+
+                                    <div
+                                        class="progress-fill"
+                                        style="width: 61%;"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="apprentice-details">
+
+                                <p>
+                                    <span class="detail-icon">⌖</span>
+                                    Ikorodu, Lagos
+                                </p>
+
+                                <p>
+                                    <span class="detail-icon">✦</span>
+                                    Master: Mr. Ade
                                 </p>
 
                             </div>
@@ -141,43 +275,49 @@
                             </a>
 
                         </div>
-      </article>
 
-      <article class="directory-card"
-                        data-name="Aisha Lawal"
-                        data-stage="3"
+                    </article>
+
+
+
+                    <!-- CARD 3 -->
+
+                    <article
+                        class="apprentice-card"
+                        data-name="Chinedu Okafor"
+                        data-stage="4"
                     >
 
-                    <div class="apprentice-photo">
+                        <div class="apprentice-photo">
 
                             <img
-                                src="Aisha.jpg"
-                                alt="Aisha Lawal"
+                                src="Chinedu.jpeg"
+                                alt="Chinedu Okafor"
                             >
-                            <div class="card-content">
 
-                            <div class="card-heading">
-
-                                <div>
-                                    <h2>Aisha Lawal</h2>
-
-                                    <span class="stage">
-                                        Stage 3
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <p class="skill-focus">
-                                 Measurement &amp; Cutting
-                            </p>
                         </div>
 
-                        <div class="progress-label">
+
+                        <div class="card-content">
+
+                            <h2>Chinedu Okafor</h2>
+
+                            <span class="stage">
+                                Stage 4
+                            </span>
+
+                            <p class="skill-focus">
+                                Pattern Drafting
+                            </p>
+
+
+                            <div class="progress-section">
+
+                                <div class="progress-label">
 
                                     <span>Progress</span>
 
-                                    <strong>61%</strong>
+                                    <strong>69%</strong>
 
                                 </div>
 
@@ -185,28 +325,34 @@
 
                                     <div
                                         class="progress-fill"
-                                        style="width: 61%;"
+                                        style="width: 69%;"
                                     ></div>
 
-                                    <div class="apprentice-details">
+                                </div>
+
+                            </div>
+
+
+                            <div class="apprentice-details">
 
                                 <p>
                                     <span class="detail-icon">⌖</span>
-                                    Surulere, Lagos
+                                    Yaba, Lagos
                                 </p>
 
                                 <p>
                                     <span class="detail-icon">✦</span>
-                                    Master: Mrs. Sekinat
+                                    Master: Mrs. Okoro
                                 </p>
 
                             </div>
+
 
                             <div class="skills-verified">
 
                                 <span class="check">✓</span>
 
-                                4 skills verified
+                                11 skills verified
 
                             </div>
 
@@ -217,43 +363,49 @@
                             </a>
 
                         </div>
-      </article>
 
-      <article class="directory-card"
-                        data-name="Sheriff Alimah"
-                        data-stage="3"
+                    </article>
+
+
+
+                    <!-- CARD 4 -->
+
+                    <article
+                        class="apprentice-card"
+                        data-name="Joshua Wambai"
+                        data-stage="2"
                     >
 
-                    <div class="apprentice-photo">
+                        <div class="apprentice-photo">
 
                             <img
-                                src="Sheriff.jpg"
-                                alt="Sheriff Alimah"
+                                src="Joshua.jpeg"
+                                alt="Joshua Wambai"
                             >
-                            <div class="card-content">
 
-                            <div class="card-heading">
-
-                                <div>
-                                    <h2>Sheriff Alimah</h2>
-
-                                    <span class="stage">
-                                        Stage 4
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <p class="skill-focus">
-                                 Weaving &amp; Embroidery
-                            </p>
                         </div>
 
-                        <div class="progress-label">
+
+                        <div class="card-content">
+
+                            <h2>Joshua Wambai</h2>
+
+                            <span class="stage">
+                                Stage 2
+                            </span>
+
+                            <p class="skill-focus">
+                                Fabric Preparation
+                            </p>
+
+
+                            <div class="progress-section">
+
+                                <div class="progress-label">
 
                                     <span>Progress</span>
 
-                                    <strong>70%</strong>
+                                    <strong>43%</strong>
 
                                 </div>
 
@@ -261,10 +413,15 @@
 
                                     <div
                                         class="progress-fill"
-                                        style="width: 70%;"
+                                        style="width: 43%;"
                                     ></div>
 
-                                    <div class="apprentice-details">
+                                </div>
+
+                            </div>
+
+
+                            <div class="apprentice-details">
 
                                 <p>
                                     <span class="detail-icon">⌖</span>
@@ -273,16 +430,17 @@
 
                                 <p>
                                     <span class="detail-icon">✦</span>
-                                    Master: Mrs. Sekinat
+                                    Master: Mr. Yusuf
                                 </p>
 
                             </div>
+
 
                             <div class="skills-verified">
 
                                 <span class="check">✓</span>
 
-                                6 skills verified
+                                5 skills verified
 
                             </div>
 
@@ -293,43 +451,49 @@
                             </a>
 
                         </div>
-      </article>
 
-      <article class="directory-card"
-                        data-name="Sunday Samuel"
-                        data-stage="5"
+                    </article>
+
+
+
+                    <!-- CARD 5 -->
+
+                    <article
+                        class="apprentice-card"
+                        data-name="David Eze"
+                        data-stage="6"
                     >
 
-                    <div class="apprentice-photo">
+                        <div class="apprentice-photo">
 
                             <img
-                                src="Sunday.jpg"
-                                alt="Sunday Samuel"
+                                src="David.jpeg"
+                                alt="David Eze"
                             >
-                            <div class="card-content">
 
-                            <div class="card-heading">
-
-                                <div>
-                                    <h2>Sunday Samuel</h2>
-
-                                    <span class="stage">
-                                        Stage 2
-                                    </span>
-                                </div>
-
-                            </div>
-
-                            <p class="skill-focus">
-                                Pattern Drafting
-                            </p>
                         </div>
 
-                        <div class="progress-label">
+
+                        <div class="card-content">
+
+                            <h2>David Eze</h2>
+
+                            <span class="stage">
+                                Stage 6
+                            </span>
+
+                            <p class="skill-focus">
+                                Finishing &amp; Quality
+                            </p>
+
+
+                            <div class="progress-section">
+
+                                <div class="progress-label">
 
                                     <span>Progress</span>
 
-                                    <strong>50%</strong>
+                                    <strong>91%</strong>
 
                                 </div>
 
@@ -337,27 +501,34 @@
 
                                     <div
                                         class="progress-fill"
-                                        style="width: 50%;"
+                                        style="width: 91%;"
                                     ></div>
 
-                                    <div class="apprentice-details">
+                                </div>
+
+                            </div>
+
+
+                            <div class="apprentice-details">
 
                                 <p>
                                     <span class="detail-icon">⌖</span>
-                                    Badagry, Lagos
+                                    Ikeja, Lagos
                                 </p>
 
                                 <p>
                                     <span class="detail-icon">✦</span>
-                                    Master: Mr. Joshua
+                                    Master: Mrs. Adebayo
                                 </p>
 
                             </div>
+
+
                             <div class="skills-verified">
 
                                 <span class="check">✓</span>
 
-                                2 skills verified
+                                18 skills verified
 
                             </div>
 
@@ -368,8 +539,117 @@
                             </a>
 
                         </div>
-    </section>
-  </main>
+
+                    </article>
+
+
+
+                    <!-- CARD 6 -->
+
+                    <article
+                        class="apprentice-card"
+                        data-name="Zainab Ibrahim"
+                        data-stage="1"
+                    >
+
+                        <div class="apprentice-photo">
+
+                            <img
+                                src="Zainab.jpeg"
+                                alt="Zainab Ibrahim"
+                            >
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <h2>Zainab Ibrahim</h2>
+
+                            <span class="stage">
+                                Stage 1
+                            </span>
+
+                            <p class="skill-focus">
+                                Sewing Fundamentals
+                            </p>
+
+
+                            <div class="progress-section">
+
+                                <div class="progress-label">
+
+                                    <span>Progress</span>
+
+                                    <strong>25%</strong>
+
+                                </div>
+
+                                <div class="progress-track">
+
+                                    <div
+                                        class="progress-fill"
+                                        style="width: 25%;"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="apprentice-details">
+
+                                <p>
+                                    <span class="detail-icon">⌖</span>
+                                    Mushin, Lagos
+                                </p>
+
+                                <p>
+                                    <span class="detail-icon">✦</span>
+                                    Master: Mr. Ibrahim
+                                </p>
+
+                            </div>
+
+
+                            <div class="skills-verified">
+
+                                <span class="check">✓</span>
+
+                                3 skills verified
+
+                            </div>
+
+
+                            <a href="#" class="view-progress">
+                                View Progress
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- NO RESULTS -->
+
+                <div class="no-results" id="noResults">
+
+                    <h2>No apprentices found</h2>
+
+                    <p>
+                        Try a different name or stage.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
 
   <footer class="site-footer">
     <div class="site-footer__inner">
@@ -378,5 +658,3 @@
   </footer>
 </body>
 </html>
-
-
