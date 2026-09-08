@@ -93,16 +93,16 @@ li a {
 }
 
 .sign-in {
-width: 100px;
+width: 140px;
 height: 40px;
-background-color: white ;
+background-color: #D9822B ;
 border-radius: 20px;
 border: none;
 }
 
 .sign-in a {
     text-decoration: none;
-    color: #13293D;
+    color: #fff;
     font-weight: bold;
     font-size: 16px;
     
@@ -119,48 +119,12 @@ border: none;
 }
 
 .sign-in:hover {
-  background-color: #D9822B;
+  background-color: #c98848;
 }
 
 .sign-in:hover a {
   color: white;
 }
-
-
-
-
-.sign-up {
-width: 100px;
-height: 40px;
-background-color: #f7f7f7;
-border-radius: 20px;
-border: none;
-}
-
-.sign-up a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    color: #1B3A57;
-
-}
-
-.sign-up:hover {
-background: #D9822B;
-}
-
-.sign-up a:hover {
-color: white;
-}
-
-.sign-up {
-  transition: background-color 0.2s ease;
-}
-
-.sign-up a {
-  transition: color 0.2s ease;
-}
-
 
 
 
@@ -244,7 +208,7 @@ h3 {
 }
 
 #collect-email {
-    width: 220px;
+    width: 250px;
     height: 40px;
     border-radius: 20px;
     border: none;
