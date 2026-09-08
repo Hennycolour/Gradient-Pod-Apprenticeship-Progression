@@ -525,7 +525,7 @@ fieldset + fieldset { margin-top: var(--s-7); }
 }
 
 .brand-link { display: inline-flex; align-items: center; gap: var(--s-3); text-decoration: none; color: var(--ink-strong); }
-.brand-link__logo { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); }
+.brand-link__logo { width: 34px; height: 34px; object-fit: contain; }
 .brand-link__name {
   font-family: var(--font-display); font-weight: 600; font-size: 1.0625rem;
   letter-spacing: .01em; line-height: 1.2;
