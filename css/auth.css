@@ -1,0 +1,55 @@
+/* auth.css — log in, create account, password reset. */
+
+/* Two panels on desktop: the form, and an illustrated column that gives
+   the page some of the product's character. On phones the illustration is
+   dropped rather than shrunk to a useless strip. */
+.auth {
+  display: grid;
+  min-height: calc(100dvh - 68px);
+}
+@media (min-width: 62rem) { .auth { grid-template-columns: 1fr 1fr; } }
+
+.auth__form-col {
+  display: grid; place-items: center;
+  padding: var(--s-7) var(--gutter);
+}
+.auth__inner { width: 100%; max-width: 26rem; }
+
+.auth__title { font-size: var(--text-xl); }
+.auth__intro { margin-top: var(--s-3); color: var(--ink-muted); }
+.auth form { margin-top: var(--s-6); }
+
+.auth__meta {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--s-3); margin-top: var(--s-4);
+  font-size: var(--text-sm);
+}
+
+.auth__submit { margin-top: var(--s-6); }
+
+.auth__alt {
+  margin-top: var(--s-6); padding-top: var(--s-5);
+  border-top: 1px solid var(--line);
+  font-size: var(--text-sm); color: var(--ink-muted);
+}
+
+.auth__aside {
+  display: none;
+  padding: var(--s-8);
+  background: var(--surface-sunk);
+  border-left: 1px solid var(--line);
+}
+@media (min-width: 62rem) { .auth__aside { display: grid; align-content: center; gap: var(--s-6); } }
+
+.auth__aside img { width: min(100%, 20rem); border-radius: var(--radius); border: 1px solid var(--line); }
+.auth__aside blockquote { max-width: 34ch; }
+.auth__aside q { font-family: var(--font-display); font-size: var(--text-lg); color: var(--ink-strong); font-style: italic; }
+.auth__aside cite { display: block; margin-top: var(--s-4); font-size: var(--text-sm); color: var(--ink-muted); font-style: normal; }
+
+/* The demo-credentials hint. Real products do not ship this; it is here so
+   the front end can be walked through without a backend. */
+.demo-hint {
+  margin-top: var(--s-5);
+  font-size: var(--text-sm);
+}
+.demo-hint code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }

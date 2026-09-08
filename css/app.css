@@ -1,0 +1,248 @@
+/* ============================================================
+   app.css — layouts for the signed-in product pages.
+   Depends on tokens and components from brand.css.
+   ============================================================ */
+
+/* ---------- Page header ------------------------------------ */
+
+.page-head { padding-block: var(--s-6) var(--s-6); }
+.page-head__top {
+  display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between;
+  gap: var(--s-4);
+}
+.page-head h1 { font-size: var(--text-xl); max-width: 20ch; }
+.page-head .lead { margin-top: var(--s-3); }
+.page-head .back-link { margin-bottom: var(--s-4); }
+
+@media (min-width: 48rem) { .page-head { padding-block: var(--s-7) var(--s-6); } }
+
+/* ---------- Two-column app layout -------------------------- */
+
+.split { display: grid; gap: var(--s-6); align-items: start; }
+@media (min-width: 62rem) {
+  .split { grid-template-columns: minmax(0, 1fr) 21rem; gap: var(--s-7); }
+}
+.split > * { min-width: 0; }
+
+.aside-stack > * + * { margin-top: var(--s-5); }
+
+/* ---------- Roster grid + apprentice card ------------------ */
+
+/* minmax() lets the grid pick its own column count — one line instead of
+   a stack of breakpoints.
+
+   auto-FILL, not auto-fit: auto-fit collapses empty tracks, so when the
+   stage filter leaves one card visible it would stretch across the whole
+   row. min(100%, 17rem) keeps the floor from overflowing narrow phones. */
+.roster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: var(--s-5);
+  align-items: start;
+}
+
+.card {
+  position: relative;
+  display: flex; flex-direction: column; min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); transform: translateY(-2px); }
+/* Keyboard users get the same affordance as mouse users. */
+.card:focus-within { border-color: var(--accent); box-shadow: var(--shadow); }
+
+.card__media {
+  aspect-ratio: 4 / 3;                 /* reserves height before load */
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-sunk);
+}
+.card__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.card__body { display: flex; flex-direction: column; flex: 1; padding: var(--s-5); }
+
+.card__head { display: flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-3); }
+.card__person { display: flex; align-items: center; gap: var(--s-3); }
+.card__name { font-size: var(--text-md); margin: 0; }
+.card__focus { margin-top: var(--s-1); font-size: var(--text-sm); color: var(--ink-muted); }
+.card__meter { margin-top: var(--s-5); }
+
+.card__facts {
+  margin-top: auto; padding-top: var(--s-4);
+  border-top: 1px solid var(--line);
+  display: grid; gap: var(--s-2); font-size: var(--text-sm);
+}
+.card__facts div { display: flex; justify-content: space-between; gap: var(--s-3); }
+.card__facts dt { color: var(--ink-muted); }
+.card__facts dd { margin: 0; color: var(--ink); text-align: right; }
+
+.card__action { margin-top: var(--s-4); padding-top: var(--s-4); border-top: 1px solid var(--line); }
+/* Cards with no fact list have nothing to absorb the spare height, so the
+   action row takes over reaching the bottom. Two auto margins in one card
+   would split the free space and neither would sit flush. */
+.card__body:not(:has(.card__facts)) .card__action { margin-top: auto; }
+.card__action a::after { content: ''; position: absolute; inset: 0; }
+
+/* ---------- Stage filter (no JavaScript) ------------------- */
+
+/* The radios are the state. They come before the chips and the grid,
+   because ~ only looks forward among siblings. Moved off-screen rather
+   than display:none, so they stay keyboard-operable and stay in the
+   accessibility tree. */
+.filter-input { position: absolute; opacity: 0; pointer-events: none; width: 1px; height: 1px; }
+
+.filter-bar { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-6); }
+.filter-bar label {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  min-height: 44px; padding: var(--s-2) var(--s-4);
+  border: 1px solid var(--line-strong); border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: var(--text-sm); font-weight: 400; color: var(--ink);
+  cursor: pointer; user-select: none;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+.filter-bar label:hover { border-color: var(--ink-muted); }
+.filter-bar .count { font-variant-numeric: tabular-nums; color: var(--ink-muted); }
+
+#stage-all:checked ~ .filter-bar label[for="stage-all"],
+#stage-1:checked   ~ .filter-bar label[for="stage-1"],
+#stage-2:checked   ~ .filter-bar label[for="stage-2"],
+#stage-3:checked   ~ .filter-bar label[for="stage-3"],
+#stage-4:checked   ~ .filter-bar label[for="stage-4"],
+#stage-5:checked   ~ .filter-bar label[for="stage-5"],
+#stage-6:checked   ~ .filter-bar label[for="stage-6"] {
+  background: var(--fill); border-color: var(--fill); color: var(--fill-ink);
+}
+#stage-all:checked ~ .filter-bar label[for="stage-all"] .count,
+#stage-1:checked   ~ .filter-bar label[for="stage-1"] .count,
+#stage-2:checked   ~ .filter-bar label[for="stage-2"] .count,
+#stage-3:checked   ~ .filter-bar label[for="stage-3"] .count,
+#stage-4:checked   ~ .filter-bar label[for="stage-4"] .count,
+#stage-5:checked   ~ .filter-bar label[for="stage-5"] .count,
+#stage-6:checked   ~ .filter-bar label[for="stage-6"] .count { color: inherit; opacity: .72; }
+
+/* The real input is off-screen, so its focus ring would be invisible.
+   Forward it to the visible chip. */
+#stage-all:focus-visible ~ .filter-bar label[for="stage-all"],
+#stage-1:focus-visible   ~ .filter-bar label[for="stage-1"],
+#stage-2:focus-visible   ~ .filter-bar label[for="stage-2"],
+#stage-3:focus-visible   ~ .filter-bar label[for="stage-3"],
+#stage-4:focus-visible   ~ .filter-bar label[for="stage-4"],
+#stage-5:focus-visible   ~ .filter-bar label[for="stage-5"],
+#stage-6:focus-visible   ~ .filter-bar label[for="stage-6"] { outline: var(--ring); outline-offset: 3px; }
+
+#stage-1:checked ~ .roster .card, #stage-2:checked ~ .roster .card,
+#stage-3:checked ~ .roster .card, #stage-4:checked ~ .roster .card,
+#stage-5:checked ~ .roster .card, #stage-6:checked ~ .roster .card { display: none; }
+
+#stage-1:checked ~ .roster .card[data-stage="1"],
+#stage-2:checked ~ .roster .card[data-stage="2"],
+#stage-3:checked ~ .roster .card[data-stage="3"],
+#stage-4:checked ~ .roster .card[data-stage="4"],
+#stage-5:checked ~ .roster .card[data-stage="5"],
+#stage-6:checked ~ .roster .card[data-stage="6"] { display: flex; }
+
+/* ---------- Apprentice record ------------------------------ */
+
+.profile { display: grid; gap: var(--s-5); }
+@media (min-width: 44rem) { .profile { grid-template-columns: auto 1fr; align-items: center; gap: var(--s-6); } }
+
+.profile__portrait {
+  width: 96px; height: 96px; border-radius: 50%;
+  display: grid; place-items: center;
+  object-fit: cover;
+  border: 1px solid var(--line); background: var(--surface-sunk);
+}
+.profile__meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3);
+  margin-top: var(--s-3); color: var(--ink-muted); font-size: var(--text-sm);
+}
+
+.ladder { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--s-2); }
+.ladder__step {
+  padding-top: var(--s-3); border-top: 4px solid var(--line);
+  font-size: var(--text-sm); color: var(--ink-muted);
+}
+.ladder__step--done    { border-top-color: var(--ink); color: var(--ink); }
+.ladder__step--current { border-top-color: var(--accent); color: var(--ink-strong); font-weight: 500; }
+.ladder__label { display: block; }
+/* Six labels will not fit on a phone; show the numbers and keep the names
+   available to screen readers. */
+@media (max-width: 44rem) { .ladder__label { display: none; } }
+
+/* ---------- Skill detail ----------------------------------- */
+
+.skill-block + .skill-block { margin-top: var(--s-7); }
+.skill-block > h2 {
+  font-family: var(--font-body); font-size: var(--text-base); font-weight: 500;
+  padding-bottom: var(--s-3); border-bottom: 1px solid var(--line); margin-bottom: var(--s-4);
+}
+
+.evidence {
+  aspect-ratio: 4 / 3; display: grid; place-content: center; gap: var(--s-2);
+  text-align: center; padding: var(--s-5);
+  border: 1px dashed var(--line-strong); border-radius: var(--radius);
+  background: var(--surface-sunk); color: var(--ink-muted); font-size: var(--text-sm);
+}
+
+/* A compact variant for the review queue, where four of these stack and a
+   full 4:3 placeholder would swamp the page. */
+.evidence--strip { aspect-ratio: auto; height: 8.5rem; }
+
+.aside-facts { display: grid; gap: var(--s-3); font-size: var(--text-sm); }
+.aside-facts div { display: flex; justify-content: space-between; gap: var(--s-3); }
+.aside-facts dt { color: var(--ink-muted); }
+.aside-facts dd { margin: 0; color: var(--ink-strong); font-weight: 500; text-align: right; }
+
+/* ---------- Curriculum ------------------------------------- */
+
+.stage-summary { display: flex; align-items: center; gap: var(--s-4); min-width: 0; }
+.stage-summary img { width: 56px; height: 42px; border-radius: 6px; border: 1px solid var(--line); object-fit: cover; }
+.stage-summary__title { display: block; font-family: var(--font-display); font-size: var(--text-md); font-weight: 600; color: var(--ink-strong); }
+.stage-summary__meta { display: block; font-size: var(--text-sm); color: var(--ink-muted); }
+
+.skill-list { display: grid; gap: var(--s-3); }
+.skill-list li {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-4);
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+}
+
+/* ---------- Workshops -------------------------------------- */
+
+.workshop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: var(--s-5); }
+.workshop { display: flex; flex-direction: column; }
+.workshop__head { display: flex; align-items: start; justify-content: space-between; gap: var(--s-3); }
+.workshop__people { display: flex; margin-top: var(--s-5); }
+/* Overlapping avatar stack; the ring is the page colour so the discs read
+   as separate. */
+.workshop__people > * { margin-left: -10px; box-shadow: 0 0 0 2px var(--surface); }
+.workshop__people > *:first-child { margin-left: 0; }
+
+/* ---------- Confirmations queue ---------------------------- */
+
+.queue-item { display: grid; gap: var(--s-4); }
+.queue-item__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); }
+.queue-item__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); padding-top: var(--s-4); border-top: 1px solid var(--line); }
+
+/* ---------- Settings tabs ---------------------------------- */
+
+#tab-profile:checked  ~ .tabs__list label[for="tab-profile"],
+#tab-account:checked  ~ .tabs__list label[for="tab-account"],
+#tab-notify:checked   ~ .tabs__list label[for="tab-notify"] {
+  color: var(--ink-strong); border-bottom-color: var(--accent);
+}
+#tab-profile:focus-visible ~ .tabs__list label[for="tab-profile"],
+#tab-account:focus-visible ~ .tabs__list label[for="tab-account"],
+#tab-notify:focus-visible  ~ .tabs__list label[for="tab-notify"] { outline: var(--ring); outline-offset: 2px; }
+
+#tab-profile:checked ~ #panel-profile,
+#tab-account:checked ~ #panel-account,
+#tab-notify:checked  ~ #panel-notify { display: block; }
+
+/* ---------- 404 -------------------------------------------- */
+
+.notfound { display: grid; place-items: center; text-align: center; padding-block: var(--s-9); }
+.notfound img { width: min(100%, 20rem); border-radius: var(--radius); margin-bottom: var(--s-6); }

@@ -1,43 +1,208 @@
-<!--
-  Get Started is the welcoming entry point for the apprenticeship tracker.
-  It introduces the purpose of the service and routes people to a progress request.
--->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Begin tracking an apprentice's progression and reflections.">
-  <title>Get Started | Apprentice Progression</title>
+  <title>Apprentice Progression — the craft, on the record</title>
+  <meta name="description" content="A shared record of what apprentice tailors in Lagos have learned, who confirmed it, and what comes next.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/brand.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="site-header__inner">
-      <a class="brand-link" href="get-started.html" aria-label="Apprentice Progression home">
-        <img src="Logo.jpeg" alt="Gradient Pod Apprenticeship logo" class="logo">
-        <span class="brand-mark">Apprentice Progression</span>
+    <div class="shell site-header__inner">
+      <a class="brand-link" href="index.html">
+        <img class="brand-link__logo" src="Logo.jpeg" alt="" width="34" height="34">
+        <span class="brand-link__name">Apprentice Progression</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="get-started.html" aria-current="page">Get Started</a>
-        <a href="request.html">Request Progress</a>
-        <a href="main.html">Artisan Directory</a>
+      <nav class="nav-desktop" aria-label="Main">
+        <ul>
+          <li><a href="about.html">Programme</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+        </ul>
       </nav>
+      <div class="header-actions">
+        <a class="button button--quiet" href="login.html">Log in</a>
+        <a class="button button--sm" href="signup.html">Create account</a>
+      </div>
+      <details class="nav-mobile">
+        <summary aria-label="Menu">Menu <span aria-hidden="true">&#9662;</span></summary>
+        <div class="nav-mobile__panel">
+          <a href="about.html">Programme</a>
+          <a href="directory.html">Directory</a>
+          <a href="curriculum.html">Curriculum</a>
+          <a href="workshops.html">Workshops</a>
+          <hr class="rule">
+          <a href="login.html">Log in</a>
+          <a href="signup.html">Create account</a>
+        </div>
+      </details>
     </div>
   </header>
+  <main id="main">
 
-  <main class="hero">
-    <section class="hero__content" aria-labelledby="welcome-heading">
-      <p class="eyebrow">A record of the work</p>
-      <h1 id="welcome-heading">Make progress visible.</h1>
-      <p class="hero__intro">Capture where an apprentice is today, celebrate the hours invested, and leave a clear reflection for the next step.</p>
-      <a class="button" href="request.html">Get Started</a>
+    <section class="shell hero">
+      <div class="hero__grid">
+        <div>
+          <h1 class="display hero__title">The craft, on the record.</h1>
+          <p class="hero__intro">
+            Apprentice tailors train for years and finish with nothing to show for it.
+            This is the record: every skill learned, the master who confirmed it, and
+            what comes next.
+          </p>
+          <div class="hero__actions button-row">
+            <a class="button" href="signup.html">Create an account</a>
+            <a class="button button--ghost" href="directory.html">Browse the directory</a>
+          </div>
+          <p class="hero__note">
+            Six apprentices, five workshops, 59 skills confirmed by a master so far.
+          </p>
+        </div>
+        <figure class="hero__figure">
+          <img src="img/hero.svg" alt="A dress form, a pattern piece and a measuring tape."
+               width="600" height="750" fetchpriority="high">
+          <figcaption class="hero__caption">Stage 5 &mdash; garment construction on the stand.</figcaption>
+        </figure>
+      </div>
     </section>
-  </main>
 
+    <section class="shell section--tight" aria-label="By the numbers">
+      <div class="stats">
+        <div class="stat"><p class="stat__value">6</p><p class="stat__label">Apprentices on the register</p></div>
+        <div class="stat"><p class="stat__value">59</p><p class="stat__label">Skills confirmed by a master</p></div>
+        <div class="stat"><p class="stat__value">5</p><p class="stat__label">Workshops taking part</p></div>
+        <div class="stat"><p class="stat__value">31</p><p class="stat__label">Skills in the curriculum</p></div>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="section-head">
+        <div>
+          <h2>How the record is kept</h2>
+          <p>Three steps, repeated every time an apprentice moves forward.</p>
+        </div>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <h3>The apprentice logs the work</h3>
+          <p>Hours at the machine, the skill practised, and a short reflection in their own words.</p>
+        </li>
+        <li class="step">
+          <h3>The master confirms it</h3>
+          <p>Nothing enters the record on the apprentice's word alone. A master signs off each skill.</p>
+        </li>
+        <li class="step">
+          <h3>The record travels</h3>
+          <p>A confirmed skill belongs to the apprentice &mdash; across workshops, cities and years.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="shell section">
+      <div class="section-head">
+        <div>
+          <h2>Six stages, first seam to finished piece</h2>
+          <p>The curriculum every workshop in the programme teaches to.</p>
+        </div>
+        <a class="link-arrow" href="curriculum.html">See the full curriculum <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="craft">
+      <figure>
+        <img src="img/stage-1.svg" alt="" width="400" height="300" loading="lazy">
+        <figcaption>
+          <p class="n">Stage 1</p>
+          <p class="t">Sewing fundamentals</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="img/stage-2.svg" alt="" width="400" height="300" loading="lazy">
+        <figcaption>
+          <p class="n">Stage 2</p>
+          <p class="t">Fabric preparation</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="img/stage-3.svg" alt="" width="400" height="300" loading="lazy">
+        <figcaption>
+          <p class="n">Stage 3</p>
+          <p class="t">Measurement &amp; cutting</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="img/stage-4.svg" alt="" width="400" height="300" loading="lazy">
+        <figcaption>
+          <p class="n">Stage 4</p>
+          <p class="t">Pattern drafting</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="img/stage-5.svg" alt="" width="400" height="300" loading="lazy">
+        <figcaption>
+          <p class="n">Stage 5</p>
+          <p class="t">Garment construction</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="img/stage-6.svg" alt="" width="400" height="300" loading="lazy">
+        <figcaption>
+          <p class="n">Stage 6</p>
+          <p class="t">Finishing &amp; quality</p>
+        </figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="cta-panel">
+        <h2>Someone finished a skill today.</h2>
+        <p>Put it on the record while the work is still fresh. It takes about a minute.</p>
+        <div class="button-row">
+          <a class="button" href="signup.html">Create an account</a>
+          <a class="button button--ghost" href="login.html">Log in</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
   <footer class="site-footer">
-    <div class="site-footer__inner">
-      <p>Apprentice Progression for Gradient Pod artisans.</p>
+    <div class="shell site-footer__inner">
+      <div class="footer-grid">
+        <div>
+          <p class="brand-link__name">Apprentice Progression</p>
+          <p class="small muted" style="margin-top: var(--s-3); max-width: 34ch;">
+            A shared record of what apprentice tailors have learned, who confirmed it,
+            and what comes next.
+          </p>
+        </div>
+        <div>
+          <h2>The record</h2>
+          <ul>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Account</h2>
+          <ul>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="signup.html">Create account</a></li>
+            <li><a href="about.html">About the programme</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>Built for Gradient Pod artisans, Lagos.</p>
+        <p>HTML and CSS only &mdash; no JavaScript.</p>
+      </div>
     </div>
   </footer>
 </body>

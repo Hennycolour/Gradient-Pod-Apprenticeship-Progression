@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings — Apprentice Progression</title>
+  <meta name="description" content="Your account, your workshop, and your notification preferences.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/brand.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand-link" href="index.html">
+        <img class="brand-link__logo" src="Logo.jpeg" alt="" width="34" height="34">
+        <span class="brand-link__name">Apprentice Progression</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Main">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="confirmations.html">Confirmations</a></li>
+          <li><a href="record.html">Record progress</a></li>
+          <li><a href="directory.html">Directory</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <details class="usermenu">
+          <summary aria-label="Account menu">
+            <span class="avatar avatar--sm avatar-initials" aria-hidden="true">MB</span>
+            <span aria-hidden="true">&#9662;</span>
+          </summary>
+          <div class="usermenu__panel">
+            <p class="who">
+              <span class="person__name">Mrs. Bello</span><br>
+              <span class="person__meta">Master &middot; Bello Atelier</span>
+            </p>
+            <a href="settings.html">Settings</a>
+            <a href="index.html">Log out</a>
+          </div>
+        </details>
+      </div>
+      <details class="nav-mobile">
+        <summary aria-label="Menu">Menu <span aria-hidden="true">&#9662;</span></summary>
+        <div class="nav-mobile__panel">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="confirmations.html">Confirmations</a>
+          <a href="record.html">Record progress</a>
+          <a href="directory.html">Directory</a>
+          <hr class="rule">
+          <a href="settings.html">Settings</a>
+          <a href="index.html">Log out</a>
+        </div>
+      </details>
+    </div>
+  </header>
+  <main id="main">
+    <div class="shell shell--narrow page-head">
+      <h1>Settings</h1>
+      <p class="lead">Your account, your workshop, and what you are told about.</p>
+    </div>
+
+    <div class="shell shell--narrow" style="padding-bottom: var(--s-9);">
+      <!-- Radio-driven tabs. The inputs hold the state and come before the tab
+           list and every panel, because ~ only looks forward among siblings. -->
+      <input class="tabs__input" type="radio" name="settings-tab" id="tab-profile" checked>
+      <input class="tabs__input" type="radio" name="settings-tab" id="tab-account">
+      <input class="tabs__input" type="radio" name="settings-tab" id="tab-notify">
+
+      <div class="tabs__list">
+        <label for="tab-profile">Profile</label>
+        <label for="tab-account">Account</label>
+        <label for="tab-notify">Notifications</label>
+      </div>
+
+      <section class="tabs__panel" id="panel-profile" aria-label="Profile settings">
+        <form class="panel" action="saved.html" method="get">
+          <fieldset>
+            <legend>Your details</legend>
+            <div class="field">
+              <span class="field-label">Photograph</span>
+              <div class="person" style="gap: var(--s-4);">
+                <span class="avatar avatar--lg avatar-initials" aria-hidden="true">MB</span>
+                <input type="file" id="avatar" name="avatar" accept="image/*" aria-label="Upload a photograph">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="first">First name</label>
+                <input id="first" name="first" type="text" value="Folake" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="last">Last name</label>
+                <input id="last" name="last" type="text" value="Bello" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="title">Title shown on confirmations</label>
+              <input id="title" name="title" type="text" value="Mrs. Bello">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Workshop</legend>
+            <div class="field">
+              <label for="workshop">Workshop name</label>
+              <input id="workshop" name="workshop" type="text" value="Bello Atelier" required>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="area">Area</label>
+                <input id="area" name="area" type="text" value="Surulere, Lagos" required>
+              </div>
+              <div class="field">
+                <label for="since">Trading since</label>
+                <input id="since" name="since" type="number" min="1900" max="2026" value="2009">
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="button" type="submit">Save changes</button>
+            <p class="note">Changes appear on the workshops page.</p>
+          </div>
+        </form>
+      </section>
+
+      <section class="tabs__panel" id="panel-account" aria-label="Account settings">
+        <form class="panel" action="saved.html" method="get">
+          <fieldset>
+            <legend>Sign-in</legend>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" value="bello@atelier.ng" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="current">Current password</label>
+              <input id="current" name="current" type="password" autocomplete="current-password">
+            </div>
+            <div class="field">
+              <label for="new">New password</label>
+              <p class="hint" id="new-hint">At least twelve characters. A phrase you will remember beats a short jumble.</p>
+              <input id="new" name="new" type="password" minlength="12" autocomplete="new-password" aria-describedby="new-hint">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Closing your account</legend>
+            <div class="notice">
+              <p>Confirmations you have already signed stay on your apprentices&rsquo; records.
+              They belong to the apprentice, not to the workshop.</p>
+            </div>
+            <div class="button-row" style="margin-top: var(--s-5);">
+              <a class="button button--danger" href="index.html">Close this account</a>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="button" type="submit">Save changes</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="tabs__panel" id="panel-notify" aria-label="Notification settings">
+        <form class="panel" action="saved.html" method="get">
+          <fieldset>
+            <legend>Tell me when</legend>
+            <div class="field">
+              <label class="check">
+                <input type="checkbox" name="n-submit" value="yes" checked>
+                <span>An apprentice submits work for confirmation</span>
+              </label>
+            </div>
+            <div class="field">
+              <label class="check">
+                <input type="checkbox" name="n-stage" value="yes" checked>
+                <span>An apprentice completes a stage</span>
+              </label>
+            </div>
+            <div class="field">
+              <label class="check">
+                <input type="checkbox" name="n-idle" value="yes">
+                <span>An entry has waited more than seven days for me</span>
+              </label>
+            </div>
+            <div class="field">
+              <label class="check">
+                <input type="checkbox" name="n-news" value="yes">
+                <span>Programme news and curriculum changes</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>How</legend>
+            <div class="choice">
+              <div class="choice__item">
+                <input type="radio" name="channel" id="ch-email" checked>
+                <label for="ch-email"><strong>Email</strong><span>bello@atelier.ng</span></label>
+              </div>
+              <div class="choice__item">
+                <input type="radio" name="channel" id="ch-sms">
+                <label for="ch-sms"><strong>SMS</strong><span>+234 801 234 5678</span></label>
+              </div>
+              <div class="choice__item">
+                <input type="radio" name="channel" id="ch-none">
+                <label for="ch-none"><strong>Nothing</strong><span>I will check the queue myself</span></label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="button" type="submit">Save changes</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div class="footer-grid">
+        <div>
+          <p class="brand-link__name">Apprentice Progression</p>
+          <p class="small muted" style="margin-top: var(--s-3); max-width: 34ch;">
+            A shared record of what apprentice tailors have learned, who confirmed it,
+            and what comes next.
+          </p>
+        </div>
+        <div>
+          <h2>The record</h2>
+          <ul>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Account</h2>
+          <ul>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="signup.html">Create account</a></li>
+            <li><a href="about.html">About the programme</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>Built for Gradient Pod artisans, Lagos.</p>
+        <p>HTML and CSS only &mdash; no JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* home.css — the public landing page. */
+
+.hero { padding-block: var(--s-7) var(--s-8); }
+.hero__grid { display: grid; gap: var(--s-7); align-items: center; }
+
+/* Breakpoint chosen by where the layout actually breaks, not by device. */
+@media (min-width: 58rem) {
+  .hero { padding-block: var(--s-9) var(--s-9); }
+  .hero__grid { grid-template-columns: 1.06fr .94fr; gap: var(--s-8); }
+}
+
+.hero__title { max-width: 13ch; }
+.hero__intro { margin-top: var(--s-5); font-size: var(--text-md); color: var(--ink-muted); max-width: 46ch; }
+.hero__actions { margin-top: var(--s-6); }
+.hero__note {
+  margin-top: var(--s-6); padding-top: var(--s-5);
+  border-top: 1px solid var(--line);
+  font-size: var(--text-sm); color: var(--ink-muted); max-width: 46ch;
+}
+
+.hero__figure { margin: 0; }
+.hero__figure img {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: var(--radius); border: 1px solid var(--line);
+}
+.hero__caption { margin-top: var(--s-3); font-size: var(--text-sm); color: var(--ink-muted); }
+
+/* ---------- Steps ------------------------------------------ */
+
+.steps { display: grid; gap: var(--s-6); counter-reset: step; }
+@media (min-width: 48rem) { .steps { grid-template-columns: repeat(3, 1fr); gap: var(--s-7); } }
+
+.step { counter-increment: step; }
+.step::before {
+  content: counter(step, decimal-leading-zero);
+  display: block; width: 2.5rem;
+  margin-bottom: var(--s-4); padding-bottom: var(--s-3);
+  border-bottom: 2px solid var(--accent);
+  font-family: var(--font-display); font-size: var(--text-md); font-weight: 600;
+  color: var(--accent); font-variant-numeric: tabular-nums;
+}
+.step h3 { margin-bottom: var(--s-3); }
+.step p { color: var(--ink-muted); max-width: 42ch; }
+
+/* ---------- Craft strip ------------------------------------ */
+
+.craft { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); gap: var(--s-5); }
+.craft figure { margin: 0; }
+.craft img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--line); border-radius: var(--radius); }
+.craft figcaption { margin-top: var(--s-3); }
+.craft .n { font-size: var(--text-sm); color: var(--accent); }
+.craft .t { font-family: var(--font-display); font-size: var(--text-md); font-weight: 600; color: var(--ink-strong); }
+
+/* ---------- Closing panel ---------------------------------- */
+
+.cta-panel {
+  background: var(--fill);              /* flat, no gradient */
+  color: var(--fill-ink);
+  border-radius: var(--radius);
+  padding: var(--s-8) var(--s-6);
+  text-align: center;
+}
+.cta-panel h2 { color: var(--fill-ink); font-size: var(--text-xl); }
+.cta-panel p { margin: var(--s-4) auto 0; max-width: 46ch; color: var(--fill-ink); opacity: .78; }
+.cta-panel .button-row { justify-content: center; margin-top: var(--s-6); }
+.cta-panel .button { background: var(--fill-ink); border-color: var(--fill-ink); color: var(--fill); }
+.cta-panel .button--ghost { background: transparent; color: var(--fill-ink); border-color: color-mix(in srgb, var(--fill-ink) 45%, transparent); }
+.cta-panel .button--ghost:hover { background: color-mix(in srgb, var(--fill-ink) 12%, transparent); border-color: var(--fill-ink); }
+
+@media (min-width: 48rem) { .cta-panel { padding: var(--s-9) var(--s-8); } }

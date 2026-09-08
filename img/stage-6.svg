@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="">
+  <style>
+    :root{--ink:#17171A;--bg:#F5F2EF;--accent:#A9481F;--soft:#CFC8C1;}
+    @media (prefers-color-scheme:dark){
+      :root{--ink:#E9E9EC;--bg:#1D1D22;--accent:#E0925F;--soft:#3B3B44;}
+    }
+  </style>
+  <rect width="400" height="300" fill="var(--bg)"/>
+  <g fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M200 66 C200 52 214 46 222 55 C230 64 220 74 208 74"/>
+    <path d="M200 74 L120 126 H280 Z"/>
+    <path d="M120 126 H280"/>
+    <path d="M148 118 C132 132 126 148 124 166 L124 254 H276 V166 C274 148 268 132 252 118"/>
+    <path d="M172 122 L200 168 L228 122" stroke="var(--soft)" stroke-width="2.5"/>
+    <path d="M200 168 V254" stroke="var(--soft)" stroke-width="2.5"/>
+    <g stroke="var(--accent)" stroke-width="2.5">
+      <circle cx="200" cy="192" r="7"/>
+      <circle cx="200" cy="220" r="7"/>
+    </g>
+  </g>
+</svg>

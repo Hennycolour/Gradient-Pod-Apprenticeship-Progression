@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="">
+  <style>
+    :root{--ink:#17171A;--bg:#F5F2EF;--accent:#A9481F;--soft:#CFC8C1;}
+    @media (prefers-color-scheme:dark){
+      :root{--ink:#E9E9EC;--bg:#1D1D22;--accent:#E0925F;--soft:#3B3B44;}
+    }
+  </style>
+  <rect width="400" height="300" fill="var(--bg)"/>
+  <g fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M88 76 H268 L312 118 V196
+             C282 228 250 176 218 206
+             C186 236 152 184 120 214
+             C106 226 94 216 88 206 Z"/>
+    <path d="M268 76 V118 H312" stroke="var(--soft)" stroke-width="2.5"/>
+    <path d="M136 78 C130 128 132 172 138 210" stroke="var(--soft)" stroke-width="2.5"/>
+    <path d="M188 78 C182 130 184 176 190 212" stroke="var(--soft)" stroke-width="2.5"/>
+    <path d="M240 78 C234 130 236 172 242 202" stroke="var(--soft)" stroke-width="2.5"/>
+    <path d="M88 250 H312" stroke="var(--accent)" stroke-width="3" stroke-dasharray="16 11"/>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="">
+  <style>
+    :root{--ink:#17171A;--bg:#F5F2EF;--accent:#A9481F;--soft:#CFC8C1;}
+    @media (prefers-color-scheme:dark){
+      :root{--ink:#E9E9EC;--bg:#1D1D22;--accent:#E0925F;--soft:#3B3B44;}
+    }
+  </style>
+  <rect width="400" height="300" fill="var(--bg)"/>
+  <g fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M186 44 H214 L218 66 H182 Z"/>
+    <path d="M200 66 C246 66 268 104 262 144 C257 178 245 200 240 224 L160 224 C155 200 143 178 138 144 C132 104 154 66 200 66 Z"/>
+    <path d="M176 70 C168 118 170 172 178 224" stroke="var(--soft)" stroke-width="2.5"/>
+    <path d="M224 70 C232 118 230 172 222 224" stroke="var(--soft)" stroke-width="2.5"/>
+    <path d="M200 224 V266"/>
+    <ellipse cx="200" cy="272" rx="52" ry="12"/>
+    <path d="M138 150 H262" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="12 9"/>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="">
+  <style>
+    :root{--ink:#17171A;--bg:#F5F2EF;--accent:#A9481F;--soft:#CFC8C1;}
+    @media (prefers-color-scheme:dark){
+      :root{--ink:#E9E9EC;--bg:#1D1D22;--accent:#E0925F;--soft:#3B3B44;}
+    }
+  </style>
+  <rect width="400" height="300" fill="var(--bg)"/>
+  <g fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="128" cy="86" rx="48" ry="13"/>
+    <ellipse cx="128" cy="214" rx="48" ry="13"/>
+    <path d="M96 92 V208"/>
+    <path d="M160 92 V208"/>
+    <g stroke="var(--soft)" stroke-width="2.5">
+      <path d="M96 112 H160"/><path d="M96 132 H160"/><path d="M96 152 H160"/>
+      <path d="M96 172 H160"/><path d="M96 192 H160"/>
+    </g>
+    <path d="M160 122 C214 118 236 152 272 162" stroke="var(--accent)" stroke-width="2.5"/>
+    <path d="M278 170 L340 96" stroke-width="7"/>
+    <circle cx="273" cy="176" r="6" stroke-width="2.5" fill="var(--bg)"/>
+    <path d="M84 258 H340" stroke="var(--accent)" stroke-width="3" stroke-dasharray="16 11"/>
+  </g>
+</svg>

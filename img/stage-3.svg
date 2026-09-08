@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="">
+  <style>
+    :root{--ink:#17171A;--bg:#F5F2EF;--accent:#A9481F;--soft:#CFC8C1;}
+    @media (prefers-color-scheme:dark){
+      :root{--ink:#E9E9EC;--bg:#1D1D22;--accent:#E0925F;--soft:#3B3B44;}
+    }
+  </style>
+  <rect width="400" height="300" fill="var(--bg)"/>
+  <g fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="92" cy="112" r="21"/>
+    <circle cx="92" cy="188" r="21"/>
+    <path d="M110 124 L322 210"/>
+    <path d="M110 176 L322 90"/>
+    <circle cx="168" cy="150" r="6" fill="var(--ink)" stroke="none"/>
+    <path d="M60 150 H150" stroke="var(--accent)" stroke-width="3" stroke-dasharray="14 10"/>
+    <g stroke="var(--soft)" stroke-width="2.5">
+      <path d="M64 246 H336"/>
+      <path d="M88 246 V228"/><path d="M120 246 V236"/><path d="M152 246 V228"/>
+      <path d="M184 246 V236"/><path d="M216 246 V228"/><path d="M248 246 V236"/>
+      <path d="M280 246 V228"/><path d="M312 246 V236"/>
+    </g>
+  </g>
+</svg>

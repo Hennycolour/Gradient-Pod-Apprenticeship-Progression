@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in — Apprentice Progression</title>
+  <meta name="description" content="Log in to record progress and confirm your apprentices' skills.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/brand.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand-link" href="index.html">
+        <img class="brand-link__logo" src="Logo.jpeg" alt="" width="34" height="34">
+        <span class="brand-link__name">Apprentice Progression</span>
+      </a>
+      <div class="header-actions">
+        <a class="button button--quiet" href="index.html">Back to site</a>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="auth">
+      <div class="auth__form-col">
+        <div class="auth__inner">
+          <h1 class="auth__title">Log in</h1>
+          <p class="auth__intro">Pick up where the record left off.</p>
+
+          <form action="dashboard.html" method="get">
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email"
+                     placeholder="you@workshop.ng" required autofocus>
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password"
+                     autocomplete="current-password" required>
+            </div>
+
+            <div class="auth__meta">
+              <label class="check">
+                <input type="checkbox" name="remember" value="yes" checked>
+                <span>Keep me logged in</span>
+              </label>
+              <a class="text-link" href="forgot-password.html">Forgot your password?</a>
+            </div>
+
+            <div class="auth__submit">
+              <button class="button button--block" type="submit">Log in</button>
+            </div>
+          </form>
+
+          <div class="notice demo-hint">
+            <p><strong>Demo:</strong> there is no backend yet, so any email and password will
+            take you to the dashboard as <code>Mrs. Bello</code>, a master tailor.</p>
+          </div>
+
+          <p class="auth__alt">
+            No account yet? <a class="text-link" href="signup.html">Create one</a>.
+          </p>
+        </div>
+      </div>
+      <aside class="auth__aside">
+        <img src="img/hero.svg" alt="" width="600" height="750">
+        <blockquote>
+          <q>Five years I worked. Nobody could tell you what I knew. Now it is written
+          down and somebody signed it.</q>
+          <cite>Tunde Adeyemi &mdash; stage 5, Bello Atelier</cite>
+        </blockquote>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div class="footer-grid">
+        <div>
+          <p class="brand-link__name">Apprentice Progression</p>
+          <p class="small muted" style="margin-top: var(--s-3); max-width: 34ch;">
+            A shared record of what apprentice tailors have learned, who confirmed it,
+            and what comes next.
+          </p>
+        </div>
+        <div>
+          <h2>The record</h2>
+          <ul>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Account</h2>
+          <ul>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="signup.html">Create account</a></li>
+            <li><a href="about.html">About the programme</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>Built for Gradient Pod artisans, Lagos.</p>
+        <p>HTML and CSS only &mdash; no JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,93 +1,209 @@
-<!--
-	This flow moves from identity and skill level to measurable hours, then to
-	open reflection, so the form follows the apprentice's progression naturally.
-	Terracotta focus states make the active field easy to find and help keyboard
-	users understand where their input will go. Every page uses brand.css tokens
-	for typography, color, spacing, and interaction states so the experience
-	remains consistent as it grows.
--->
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Record an apprentice's current progress and reflections.">
-	<title>Progress Request | Apprentice Progression</title>
-	<link rel="stylesheet" href="css/brand.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Record progress — Apprentice Progression</title>
+  <meta name="description" content="Log an apprentice's hours, the skill practised, and a reflection for the record.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/brand.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-	<header class="site-header">
-		<div class="site-header__inner">
-			<a class="brand-link" href="get-started.html" aria-label="Apprentice Progression home">
-				<img src="Logo.jpeg" alt="Gradient Pod Apprenticeship logo" class="logo">
-				<span class="brand-mark">Apprentice Progression</span>
-			</a>
-			<nav class="site-nav" aria-label="Main navigation">
-				<a href="get-started.html">Get Started</a>
-				<a href="request.html" aria-current="page">Request Progress</a>
-				<a href="main.html">Artisan Directory</a>
-			</nav>
-		</div>
-	</header>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand-link" href="index.html">
+        <img class="brand-link__logo" src="Logo.jpeg" alt="" width="34" height="34">
+        <span class="brand-link__name">Apprentice Progression</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Main">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="confirmations.html">Confirmations</a></li>
+          <li><a href="record.html" aria-current="page">Record progress</a></li>
+          <li><a href="directory.html">Directory</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <details class="usermenu">
+          <summary aria-label="Account menu">
+            <span class="avatar avatar--sm avatar-initials" aria-hidden="true">MB</span>
+            <span aria-hidden="true">&#9662;</span>
+          </summary>
+          <div class="usermenu__panel">
+            <p class="who">
+              <span class="person__name">Mrs. Bello</span><br>
+              <span class="person__meta">Master &middot; Bello Atelier</span>
+            </p>
+            <a href="settings.html">Settings</a>
+            <a href="index.html">Log out</a>
+          </div>
+        </details>
+      </div>
+      <details class="nav-mobile">
+        <summary aria-label="Menu">Menu <span aria-hidden="true">&#9662;</span></summary>
+        <div class="nav-mobile__panel">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="confirmations.html">Confirmations</a>
+          <a href="record.html" aria-current="page">Record progress</a>
+          <a href="directory.html">Directory</a>
+          <hr class="rule">
+          <a href="settings.html">Settings</a>
+          <a href="index.html">Log out</a>
+        </div>
+      </details>
+    </div>
+  </header>
+  <main id="main">
+    <div class="shell shell--narrow page-head">
+      <a class="back-link" href="dashboard.html"><span aria-hidden="true">&larr;</span> Back to dashboard</a>
+      <h1>Record a milestone</h1>
+      <p class="lead">
+        Log what was practised while it is still fresh. The entry joins the apprentice&rsquo;s
+        record once a master confirms it.
+      </p>
+    </div>
 
-	<main class="page-container">
-		<section class="form-shell" aria-labelledby="request-heading">
-			<p class="eyebrow">Progress check-in</p>
-			<h1 id="request-heading">Record a milestone.</h1>
-			<p class="form-intro">Share the latest progress so the next stage of learning has a clear starting point.</p>
+    <div class="shell shell--narrow" style="padding-bottom: var(--s-9);">
+      <!-- No JavaScript. The form submits to a real confirmation page, which is what a
+           browser does natively and what a server-backed form would do anyway. -->
+      <form class="panel" action="saved.html" method="get">
 
-			<form class="form" action="#" method="post">
-				<div class="field">
-					<label for="apprentice-name">Apprentice Name</label>
-					<input id="apprentice-name" name="apprentice-name" type="text" autocomplete="name" required>
-				</div>
+        <fieldset>
+          <legend>Who did the work</legend>
 
-				<div class="field">
-					<label for="mentor-name">Mentor Name</label>
-					<input id="mentor-name" name="mentor-name" type="text" autocomplete="name" required>
-				</div>
+          <div class="field">
+            <label for="apprentice">Apprentice</label>
+            <select id="apprentice" name="apprentice" required>
+              <option value="tunde" selected>Tunde Adeyemi &mdash; stage 5</option>
+              <option value="zainab">Zainab Ibrahim &mdash; stage 1</option>
+            </select>
+          </div>
 
-				<div class="field">
-					<label for="skill-level">Current Skill Level</label>
-					<select id="skill-level" name="skill-level">
-						<option value="beginner">Beginner</option>
-						<option value="intermediate">Intermediate</option>
-						<option value="advanced">Advanced</option>
-					</select>
-				</div>
+          <div class="field">
+            <label for="master">Confirming master</label>
+            <p class="hint" id="master-hint">The master who watched the work and will sign it off.</p>
+            <input id="master" name="master" type="text" value="Mrs. Bello"
+                   autocomplete="off" aria-describedby="master-hint" required>
+          </div>
+        </fieldset>
 
-				<div class="field">
-					<label for="hours-completed">Hours Completed</label>
-					<input id="hours-completed" name="hours-completed" type="number" min="0" step="1" required>
-				</div>
+        <fieldset>
+          <legend>What was practised</legend>
 
-				<div class="field">
-					<label for="notes">Notes / Reflections</label>
-					<textarea id="notes" name="notes"></textarea>
-				</div>
+          <div class="field">
+            <label for="stage">Stage</label>
+            <select id="stage" name="stage" required>
+              <option value="1">Stage 1 &mdash; Sewing fundamentals</option>
+              <option value="2">Stage 2 &mdash; Fabric preparation</option>
+              <option value="3">Stage 3 &mdash; Measurement &amp; cutting</option>
+              <option value="4">Stage 4 &mdash; Pattern drafting</option>
+              <option value="5" selected>Stage 5 &mdash; Garment construction</option>
+              <option value="6">Stage 6 &mdash; Finishing &amp; quality</option>
+            </select>
+          </div>
 
-				<div class="form__actions">
-					<button class="button" type="submit">Save Progress</button>
-				</div>
+          <div class="field">
+            <label for="skill">Skill</label>
+            <select id="skill" name="skill" required>
+              <option>Attaching a lined waistband</option>
+              <option>Welt pockets on a jacket front</option>
+              <option>Setting a two-piece sleeve</option>
+              <option>Interfacing a collar stand</option>
+              <option>Hemming a finished garment</option>
+              <option>Hand-finishing a jacket lining</option>
+            </select>
+          </div>
 
-				<p class="confirmation" id="confirmation" role="status" aria-live="polite" hidden>
-					Progress saved. Your mentor can now review this milestone and discuss the next step with you.
-				</p>
-			</form>
-		</section>
-	</main>
+          <div class="field-row">
+            <div class="field">
+              <label for="hours">Hours completed</label>
+              <input id="hours" name="hours" type="number" min="0" max="200" step="1"
+                     inputmode="numeric" placeholder="6" required>
+            </div>
+            <div class="field">
+              <label for="date">Date of the work</label>
+              <input id="date" name="date" type="date" value="2026-09-08" required>
+            </div>
+          </div>
 
-	<footer class="site-footer">
-		<div class="site-footer__inner">
-			<p>Apprentice Progression for Gradient Pod artisans.</p>
-		</div>
-	</footer>
+          <div class="field">
+            <label for="attempts">Attempt number <span class="optional">(optional)</span></label>
+            <input id="attempts" name="attempts" type="number" min="1" max="20" step="1" inputmode="numeric">
+          </div>
+        </fieldset>
 
-	<script>
-		document.querySelector('.form').addEventListener('submit', function (event) {
-			event.preventDefault();
-			document.querySelector('#confirmation').hidden = false;
-		});
-	</script>
+        <fieldset>
+          <legend>Evidence and reflection</legend>
+
+          <div class="field">
+            <label for="photo">Photograph of the work <span class="optional">(optional)</span></label>
+            <p class="hint" id="photo-hint">A clear picture of the finished piece helps the master judge it.</p>
+            <input id="photo" name="photo" type="file" accept="image/*" aria-describedby="photo-hint">
+          </div>
+
+          <div class="field">
+            <label for="notes">Notes</label>
+            <p class="hint" id="notes-hint">
+              What went well, what needs another attempt. This is what the apprentice reads
+              back in a year&rsquo;s time.
+            </p>
+            <textarea id="notes" name="notes" rows="5" aria-describedby="notes-hint" required></textarea>
+          </div>
+
+          <div class="field">
+            <label class="check">
+              <input type="checkbox" name="confirm-now" value="yes">
+              <span>Confirm this skill now &mdash; I watched the work myself.</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button class="button" type="submit">Save entry</button>
+          <a class="button button--ghost" href="dashboard.html">Cancel</a>
+          <p class="note">The apprentice is notified once you save.</p>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div class="footer-grid">
+        <div>
+          <p class="brand-link__name">Apprentice Progression</p>
+          <p class="small muted" style="margin-top: var(--s-3); max-width: 34ch;">
+            A shared record of what apprentice tailors have learned, who confirmed it,
+            and what comes next.
+          </p>
+        </div>
+        <div>
+          <h2>The record</h2>
+          <ul>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Account</h2>
+          <ul>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="signup.html">Create account</a></li>
+            <li><a href="about.html">About the programme</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>Built for Gradient Pod artisans, Lagos.</p>
+        <p>HTML and CSS only &mdash; no JavaScript.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

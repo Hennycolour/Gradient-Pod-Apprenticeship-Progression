@@ -1,661 +1,310 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apprentice Directory · TailorTrack</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/brand.css">
-<link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apprentice directory — Apprentice Progression</title>
+  <meta name="description" content="Six apprentice tailors, the stage each has reached, and the skills a master has confirmed.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="Logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/brand.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
-<body></head>s
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="site-header__inner">
-      <a class="brand-link" href="get-started.html" aria-label="Apprentice Progression home">
-        <img src="Logo.jpeg" alt="Gradient Pod Apprenticeship logo" class="logo">
-        <span class="brand-mark">Apprentice Progression</span>
+    <div class="shell site-header__inner">
+      <a class="brand-link" href="index.html">
+        <img class="brand-link__logo" src="Logo.jpeg" alt="" width="34" height="34">
+        <span class="brand-link__name">Apprentice Progression</span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="get-started.html">Get Started</a>
-        <a href="request.html">Request Progress</a>
-        <a href="main.html" aria-current="page">Artisan Directory</a>
-        <a href="details.html">View Progress</a>
+      <nav class="nav-desktop" aria-label="Main">
+        <ul>
+          <li><a href="about.html">Programme</a></li>
+          <li><a href="directory.html" aria-current="page">Directory</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+        </ul>
       </nav>
+      <div class="header-actions">
+        <a class="button button--quiet" href="login.html">Log in</a>
+        <a class="button button--sm" href="signup.html">Create account</a>
+      </div>
+      <details class="nav-mobile">
+        <summary aria-label="Menu">Menu <span aria-hidden="true">&#9662;</span></summary>
+        <div class="nav-mobile__panel">
+          <a href="about.html">Programme</a>
+          <a href="directory.html" aria-current="page">Directory</a>
+          <a href="curriculum.html">Curriculum</a>
+          <a href="workshops.html">Workshops</a>
+          <hr class="rule">
+          <a href="login.html">Log in</a>
+          <a href="signup.html">Create account</a>
+        </div>
+      </details>
     </div>
   </header>
-
-      <main>
-
-        <section class="directory-section">
-
-            <div class="wrap">
-
-                <!-- INTRO -->
-
-                <div class="directory-intro">
-
-                    <p class="eyebrow">THE WORKSHOP DIRECTORY</p>
-
-                    <h1>Apprentice Directory</h1>
-
-                    <p class="intro-text">
-                        Browse apprentices and see where they are
-                        in their tailoring journey.
-                    </p>
-
-                </div>
-
-
-                <!-- SEARCH + FILTER -->
-
-                <div class="directory-controls">
-
-                    <div class="search-box">
-
-                        <span class="search-icon">⌕</span>
-
-                        <input
-                            type="search"
-                            id="searchInput"
-                            placeholder="Search apprentices..."
-                            aria-label="Search apprentices"
-                        >
-
-                    </div>
-
-
-                    <div class="filter-box">
-
-                        <select id="stageFilter" aria-label="Filter by stage">
-
-                            <option value="all">All Stages</option>
-                            <option value="1">Stage 1</option>
-                            <option value="2">Stage 2</option>
-                            <option value="3">Stage 3</option>
-                            <option value="4">Stage 4</option>
-                            <option value="5">Stage 5</option>
-                            <option value="6">Stage 6</option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RESULTS COUNT -->
-
-                <div class="directory-meta">
-                    <span id="resultCount">6 apprentices</span>
-                </div>
-
-
-                <!-- APPRENTICE GRID -->
-
-                <div class="apprentice-grid" id="apprenticeGrid">
-
-
-                    <!-- CARD 1 -->
-
-                    <article
-                        class="apprentice-card"
-                        data-name="Tunde Adeyemi"
-                        data-stage="5"
-                    >
-
-                        <div class="apprentice-photo">
-
-                            <img
-                                src="Tunde.jpeg"
-                                alt="Tunde Adeyemi"
-                            >
-
-                        </div>
-
-
-                        <div class="card-content">
-
-                            <div class="card-heading">
-
-                                <div>
-                                    <h2>Tunde Adeyemi</h2>
-
-                                    <span class="stage">
-                                        Stage 5
-                                    </span>
-                                </div>
-
-                            </div>
-
-
-                            <p class="skill-focus">
-                                Garment Construction
-                            </p>
-
-
-                            <div class="progress-section">
-
-                                <div class="progress-label">
-
-                                    <span>Progress</span>
-
-                                    <strong>78%</strong>
-
-                                </div>
-
-                                <div class="progress-track">
-
-                                    <div
-                                        class="progress-fill"
-                                        style="width: 78%;"
-                                    ></div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="apprentice-details">
-
-                                <p>
-                                    <span class="detail-icon">⌖</span>
-                                    Surulere, Lagos
-                                </p>
-
-                                <p>
-                                    <span class="detail-icon">✦</span>
-                                    Master: Mrs. Bello
-                                </p>
-
-                            </div>
-
-
-                            <div class="skills-verified">
-
-                                <span class="check">✓</span>
-
-                                14 skills verified
-
-                            </div>
-
-
-                            <a href="details.html" class="view-progress">
-                                View Progress 
-                                <span>→</span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- CARD 2 -->
-
-                    <article
-                        class="apprentice-card"
-                        data-name="Aisha Lawal"
-                        data-stage="3"
-                    >
-
-                        <div class="apprentice-photo">
-
-                            <img
-                                src="Aishat.jpeg"
-                                alt="Aisha Lawal"
-                            >
-
-                        </div>
-
-
-                        <div class="card-content">
-
-                            <h2>Aisha Lawal</h2>
-
-                            <span class="stage">
-                                Stage 3
-                            </span>
-
-                            <p class="skill-focus">
-                                Measurement &amp; Cutting
-                            </p>
-
-
-                            <div class="progress-section">
-
-                                <div class="progress-label">
-
-                                    <span>Progress</span>
-
-                                    <strong>61%</strong>
-
-                                </div>
-
-                                <div class="progress-track">
-
-                                    <div
-                                        class="progress-fill"
-                                        style="width: 61%;"
-                                    ></div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="apprentice-details">
-
-                                <p>
-                                    <span class="detail-icon">⌖</span>
-                                    Ikorodu, Lagos
-                                </p>
-
-                                <p>
-                                    <span class="detail-icon">✦</span>
-                                    Master: Mr. Ade
-                                </p>
-
-                            </div>
-
-
-                            <div class="skills-verified">
-
-                                <span class="check">✓</span>
-
-                                8 skills verified
-
-                            </div>
-
-
-                            <a href="#" class="view-progress">
-                                View Progress
-                                <span>→</span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- CARD 3 -->
-
-                    <article
-                        class="apprentice-card"
-                        data-name="Chinedu Okafor"
-                        data-stage="4"
-                    >
-
-                        <div class="apprentice-photo">
-
-                            <img
-                                src="Chinedu.jpeg"
-                                alt="Chinedu Okafor"
-                            >
-
-                        </div>
-
-
-                        <div class="card-content">
-
-                            <h2>Chinedu Okafor</h2>
-
-                            <span class="stage">
-                                Stage 4
-                            </span>
-
-                            <p class="skill-focus">
-                                Pattern Drafting
-                            </p>
-
-
-                            <div class="progress-section">
-
-                                <div class="progress-label">
-
-                                    <span>Progress</span>
-
-                                    <strong>69%</strong>
-
-                                </div>
-
-                                <div class="progress-track">
-
-                                    <div
-                                        class="progress-fill"
-                                        style="width: 69%;"
-                                    ></div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="apprentice-details">
-
-                                <p>
-                                    <span class="detail-icon">⌖</span>
-                                    Yaba, Lagos
-                                </p>
-
-                                <p>
-                                    <span class="detail-icon">✦</span>
-                                    Master: Mrs. Okoro
-                                </p>
-
-                            </div>
-
-
-                            <div class="skills-verified">
-
-                                <span class="check">✓</span>
-
-                                11 skills verified
-
-                            </div>
-
-
-                            <a href="#" class="view-progress">
-                                View Progress
-                                <span>→</span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- CARD 4 -->
-
-                    <article
-                        class="apprentice-card"
-                        data-name="Joshua Wambai"
-                        data-stage="2"
-                    >
-
-                        <div class="apprentice-photo">
-
-                            <img
-                                src="Joshua.jpeg"
-                                alt="Joshua Wambai"
-                            >
-
-                        </div>
-
-
-                        <div class="card-content">
-
-                            <h2>Joshua Wambai</h2>
-
-                            <span class="stage">
-                                Stage 2
-                            </span>
-
-                            <p class="skill-focus">
-                                Fabric Preparation
-                            </p>
-
-
-                            <div class="progress-section">
-
-                                <div class="progress-label">
-
-                                    <span>Progress</span>
-
-                                    <strong>43%</strong>
-
-                                </div>
-
-                                <div class="progress-track">
-
-                                    <div
-                                        class="progress-fill"
-                                        style="width: 43%;"
-                                    ></div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="apprentice-details">
-
-                                <p>
-                                    <span class="detail-icon">⌖</span>
-                                    Agege, Lagos
-                                </p>
-
-                                <p>
-                                    <span class="detail-icon">✦</span>
-                                    Master: Mr. Yusuf
-                                </p>
-
-                            </div>
-
-
-                            <div class="skills-verified">
-
-                                <span class="check">✓</span>
-
-                                5 skills verified
-
-                            </div>
-
-
-                            <a href="#" class="view-progress">
-                                View Progress
-                                <span>→</span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- CARD 5 -->
-
-                    <article
-                        class="apprentice-card"
-                        data-name="David Eze"
-                        data-stage="6"
-                    >
-
-                        <div class="apprentice-photo">
-
-                            <img
-                                src="David.jpeg"
-                                alt="David Eze"
-                            >
-
-                        </div>
-
-
-                        <div class="card-content">
-
-                            <h2>David Eze</h2>
-
-                            <span class="stage">
-                                Stage 6
-                            </span>
-
-                            <p class="skill-focus">
-                                Finishing &amp; Quality
-                            </p>
-
-
-                            <div class="progress-section">
-
-                                <div class="progress-label">
-
-                                    <span>Progress</span>
-
-                                    <strong>91%</strong>
-
-                                </div>
-
-                                <div class="progress-track">
-
-                                    <div
-                                        class="progress-fill"
-                                        style="width: 91%;"
-                                    ></div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="apprentice-details">
-
-                                <p>
-                                    <span class="detail-icon">⌖</span>
-                                    Ikeja, Lagos
-                                </p>
-
-                                <p>
-                                    <span class="detail-icon">✦</span>
-                                    Master: Mrs. Adebayo
-                                </p>
-
-                            </div>
-
-
-                            <div class="skills-verified">
-
-                                <span class="check">✓</span>
-
-                                18 skills verified
-
-                            </div>
-
-
-                            <a href="#" class="view-progress">
-                            </a>
-                                View Progress
-                                <span> <a href="detail.html">→</a></span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- CARD 6 -->
-
-                    <article
-                        class="apprentice-card"
-                        data-name="Zainab Ibrahim"
-                        data-stage="1"
-                    >
-
-                        <div class="apprentice-photo">
-
-                            <img
-                                src="Zainab.jpeg"
-                                alt="Zainab Ibrahim"
-                            >
-
-                        </div>
-
-
-                        <div class="card-content">
-
-                            <h2>Zainab Ibrahim</h2>
-
-                            <span class="stage">
-                                Stage 1
-                            </span>
-
-                            <p class="skill-focus">
-                                Sewing Fundamentals
-                            </p>
-
-
-                            <div class="progress-section">
-
-                                <div class="progress-label">
-
-                                    <span>Progress</span>
-
-                                    <strong>25%</strong>
-
-                                </div>
-
-                                <div class="progress-track">
-
-                                    <div
-                                        class="progress-fill"
-                                        style="width: 25%;"
-                                    ></div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="apprentice-details">
-
-                                <p>
-                                    <span class="detail-icon">⌖</span>
-                                    Mushin, Lagos
-                                </p>
-
-                                <p>
-                                    <span class="detail-icon">✦</span>
-                                    Master: Mr. Ibrahim
-                                </p>
-
-                            </div>
-
-
-                            <div class="skills-verified">
-
-                                <span class="check">✓</span>
-
-                                3 skills verified
-
-                            </div>
-
-
-                            <a href="#" class="view-progress">
-                                View Progress
-                                <span>→</span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-
-                <!-- NO RESULTS -->
-
-                <div class="no-results" id="noResults">
-
-                    <h2>No apprentices found</h2>
-
-                    <p>
-                        Try a different name or stage.
-                    </p>
-
-                </div>
-
+  <main id="main">
+    <div class="shell page-head">
+      <div class="page-head__top">
+        <div>
+          <h1>The apprentice directory</h1>
+          <p class="lead">
+            Every apprentice on the register, the stage they have reached, and how many
+            skills a master has confirmed.
+          </p>
+        </div>
+        <a class="button button--ghost" href="curriculum.html">What the stages mean</a>
+      </div>
+    </div>
+
+    <section class="shell" style="padding-bottom: var(--s-8);" aria-labelledby="roster-heading">
+      <h2 class="sr-only" id="roster-heading">Apprentices, filtered by stage</h2>
+
+      <!-- These radios hold the filter state. CSS reads :checked and shows the
+           matching cards, so filtering works with no JavaScript at all. -->
+      <input class="filter-input" type="radio" name="stage" id="stage-all" checked>
+      <input class="filter-input" type="radio" name="stage" id="stage-1">
+      <input class="filter-input" type="radio" name="stage" id="stage-2">
+      <input class="filter-input" type="radio" name="stage" id="stage-3">
+      <input class="filter-input" type="radio" name="stage" id="stage-4">
+      <input class="filter-input" type="radio" name="stage" id="stage-5">
+      <input class="filter-input" type="radio" name="stage" id="stage-6">
+
+      <div class="filter-bar">
+        <label for="stage-all">All stages <span class="count">6</span></label>
+        <label for="stage-1">Stage 1 <span class="count">1</span></label>
+        <label for="stage-2">Stage 2 <span class="count">1</span></label>
+        <label for="stage-3">Stage 3 <span class="count">1</span></label>
+        <label for="stage-4">Stage 4 <span class="count">1</span></label>
+        <label for="stage-5">Stage 5 <span class="count">1</span></label>
+        <label for="stage-6">Stage 6 <span class="count">1</span></label>
+      </div>
+
+      <div class="roster">
+        <article class="card" data-stage="1">
+          <div class="card__media">
+            <img src="img/stage-1.svg" alt="" width="400" height="300">
+          </div>
+          <div class="card__body">
+            <div class="card__head">
+              <span class="pill pill--accent">Stage 1</span>
+              <span class="pill pill--quiet">3 skills</span>
             </div>
-
-        </section>
-
-    </main>
-
+            <div class="card__person">
+              <span class="avatar avatar-initials" aria-hidden="true">ZI</span>
+              <div>
+                <h3 class="card__name">Zainab Ibrahim</h3>
+                <p class="card__focus">Sewing fundamentals</p>
+              </div>
+            </div>
+            <div class="card__meter">
+              <div class="meter-label"><span>Stage progress</span><strong>25%</strong></div>
+              <div class="meter" role="img" aria-label="Stage progress: 25 percent">
+                <div class="meter__fill" style="--value: 25"></div>
+              </div>
+            </div>
+            <dl class="card__facts">
+              <div><dt>Workshop</dt><dd>Surulere, Lagos</dd></div>
+              <div><dt>Master</dt><dd>Mrs. Bello</dd></div>
+            </dl>
+            <div class="card__action">
+              <a class="link-arrow" href="apprentice.html">View Zainab's record<span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-stage="2">
+          <div class="card__media">
+            <img src="img/stage-2.svg" alt="" width="400" height="300">
+          </div>
+          <div class="card__body">
+            <div class="card__head">
+              <span class="pill pill--accent">Stage 2</span>
+              <span class="pill pill--quiet">5 skills</span>
+            </div>
+            <div class="card__person">
+              <span class="avatar avatar-initials" aria-hidden="true">JW</span>
+              <div>
+                <h3 class="card__name">Joshua Wambai</h3>
+                <p class="card__focus">Fabric preparation</p>
+              </div>
+            </div>
+            <div class="card__meter">
+              <div class="meter-label"><span>Stage progress</span><strong>43%</strong></div>
+              <div class="meter" role="img" aria-label="Stage progress: 43 percent">
+                <div class="meter__fill" style="--value: 43"></div>
+              </div>
+            </div>
+            <dl class="card__facts">
+              <div><dt>Workshop</dt><dd>Agege, Lagos</dd></div>
+              <div><dt>Master</dt><dd>Mr. Yusuf</dd></div>
+            </dl>
+            <div class="card__action">
+              <a class="link-arrow" href="apprentice.html">View Joshua's record<span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-stage="3">
+          <div class="card__media">
+            <img src="img/stage-3.svg" alt="" width="400" height="300">
+          </div>
+          <div class="card__body">
+            <div class="card__head">
+              <span class="pill pill--accent">Stage 3</span>
+              <span class="pill pill--quiet">8 skills</span>
+            </div>
+            <div class="card__person">
+              <span class="avatar avatar-initials" aria-hidden="true">AL</span>
+              <div>
+                <h3 class="card__name">Aisha Lawal</h3>
+                <p class="card__focus">Measurement &amp; cutting</p>
+              </div>
+            </div>
+            <div class="card__meter">
+              <div class="meter-label"><span>Stage progress</span><strong>61%</strong></div>
+              <div class="meter" role="img" aria-label="Stage progress: 61 percent">
+                <div class="meter__fill" style="--value: 61"></div>
+              </div>
+            </div>
+            <dl class="card__facts">
+              <div><dt>Workshop</dt><dd>Ikorodu, Lagos</dd></div>
+              <div><dt>Master</dt><dd>Mr. Ade</dd></div>
+            </dl>
+            <div class="card__action">
+              <a class="link-arrow" href="apprentice.html">View Aisha's record<span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-stage="4">
+          <div class="card__media">
+            <img src="img/stage-4.svg" alt="" width="400" height="300" loading="lazy">
+          </div>
+          <div class="card__body">
+            <div class="card__head">
+              <span class="pill pill--accent">Stage 4</span>
+              <span class="pill pill--quiet">11 skills</span>
+            </div>
+            <div class="card__person">
+              <span class="avatar avatar-initials" aria-hidden="true">CO</span>
+              <div>
+                <h3 class="card__name">Chinedu Okafor</h3>
+                <p class="card__focus">Pattern drafting</p>
+              </div>
+            </div>
+            <div class="card__meter">
+              <div class="meter-label"><span>Stage progress</span><strong>69%</strong></div>
+              <div class="meter" role="img" aria-label="Stage progress: 69 percent">
+                <div class="meter__fill" style="--value: 69"></div>
+              </div>
+            </div>
+            <dl class="card__facts">
+              <div><dt>Workshop</dt><dd>Yaba, Lagos</dd></div>
+              <div><dt>Master</dt><dd>Mrs. Okoro</dd></div>
+            </dl>
+            <div class="card__action">
+              <a class="link-arrow" href="apprentice.html">View Chinedu's record<span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-stage="5">
+          <div class="card__media">
+            <img src="img/stage-5.svg" alt="" width="400" height="300" loading="lazy">
+          </div>
+          <div class="card__body">
+            <div class="card__head">
+              <span class="pill pill--accent">Stage 5</span>
+              <span class="pill pill--quiet">14 skills</span>
+            </div>
+            <div class="card__person">
+              <span class="avatar avatar-initials" aria-hidden="true">TA</span>
+              <div>
+                <h3 class="card__name">Tunde Adeyemi</h3>
+                <p class="card__focus">Garment construction</p>
+              </div>
+            </div>
+            <div class="card__meter">
+              <div class="meter-label"><span>Stage progress</span><strong>78%</strong></div>
+              <div class="meter" role="img" aria-label="Stage progress: 78 percent">
+                <div class="meter__fill" style="--value: 78"></div>
+              </div>
+            </div>
+            <dl class="card__facts">
+              <div><dt>Workshop</dt><dd>Surulere, Lagos</dd></div>
+              <div><dt>Master</dt><dd>Mrs. Bello</dd></div>
+            </dl>
+            <div class="card__action">
+              <a class="link-arrow" href="apprentice.html">View Tunde's record<span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-stage="6">
+          <div class="card__media">
+            <img src="img/stage-6.svg" alt="" width="400" height="300" loading="lazy">
+          </div>
+          <div class="card__body">
+            <div class="card__head">
+              <span class="pill pill--accent">Stage 6</span>
+              <span class="pill pill--quiet">18 skills</span>
+            </div>
+            <div class="card__person">
+              <span class="avatar avatar-initials" aria-hidden="true">DE</span>
+              <div>
+                <h3 class="card__name">David Eze</h3>
+                <p class="card__focus">Finishing &amp; quality</p>
+              </div>
+            </div>
+            <div class="card__meter">
+              <div class="meter-label"><span>Stage progress</span><strong>91%</strong></div>
+              <div class="meter" role="img" aria-label="Stage progress: 91 percent">
+                <div class="meter__fill" style="--value: 91"></div>
+              </div>
+            </div>
+            <dl class="card__facts">
+              <div><dt>Workshop</dt><dd>Ikeja, Lagos</dd></div>
+              <div><dt>Master</dt><dd>Mrs. Adebayo</dd></div>
+            </dl>
+            <div class="card__action">
+              <a class="link-arrow" href="apprentice.html">View David's record<span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
   <footer class="site-footer">
-    <div class="site-footer__inner">
-      <p>Apprentice Progression for Gradient Pod artisans.</p>
+    <div class="shell site-footer__inner">
+      <div class="footer-grid">
+        <div>
+          <p class="brand-link__name">Apprentice Progression</p>
+          <p class="small muted" style="margin-top: var(--s-3); max-width: 34ch;">
+            A shared record of what apprentice tailors have learned, who confirmed it,
+            and what comes next.
+          </p>
+        </div>
+        <div>
+          <h2>The record</h2>
+          <ul>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Account</h2>
+          <ul>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="signup.html">Create account</a></li>
+            <li><a href="about.html">About the programme</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>Built for Gradient Pod artisans, Lagos.</p>
+        <p>HTML and CSS only &mdash; no JavaScript.</p>
+      </div>
     </div>
   </footer>
 </body>

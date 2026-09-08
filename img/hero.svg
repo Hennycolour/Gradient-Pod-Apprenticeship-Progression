@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="">
+  <style>
+    :root{--ink:#17171A;--bg:#F5F2EF;--accent:#A9481F;--soft:#CFC8C1;}
+    @media (prefers-color-scheme:dark){
+      :root{--ink:#E9E9EC;--bg:#1D1D22;--accent:#E0925F;--soft:#3B3B44;}
+    }
+  </style>
+  <rect width="600" height="750" fill="var(--bg)"/>
+  <g fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- pattern piece leaning behind -->
+    <g stroke="var(--soft)" stroke-width="3">
+      <path d="M96 214 C130 210 148 226 158 242 C176 218 208 208 238 216
+               C258 300 252 420 242 546 L84 546 C74 430 78 300 96 214 Z"/>
+      <path d="M160 258 V510"/>
+      <path d="M152 270 L160 256 L168 270"/>
+      <path d="M152 498 L160 512 L168 498"/>
+    </g>
+
+    <!-- dress form -->
+    <path d="M382 150 H428 L434 190 H376 Z"/>
+    <path d="M405 190 C482 190 518 254 508 322 C499 380 478 418 470 460 L340 460
+             C332 418 311 380 302 322 C292 254 328 190 405 190 Z"/>
+    <path d="M362 196 C348 280 352 380 366 460" stroke="var(--soft)" stroke-width="2.8"/>
+    <path d="M448 196 C462 280 458 380 444 460" stroke="var(--soft)" stroke-width="2.8"/>
+    <path d="M405 460 V614"/>
+    <ellipse cx="405" cy="622" rx="86" ry="18"/>
+
+    <!-- measuring tape draped over the shoulder -->
+    <path d="M330 214 C300 268 322 340 296 396 C276 440 236 452 214 486"
+          stroke="var(--accent)" stroke-width="3.5"/>
+    <g stroke="var(--accent)" stroke-width="2.2" opacity=".75">
+      <path d="M318 246 L332 252"/><path d="M312 288 L327 292"/>
+      <path d="M314 330 L329 332"/><path d="M304 372 L318 378"/>
+      <path d="M282 410 L294 420"/><path d="M254 440 L264 452"/>
+    </g>
+
+    <!-- waist line -->
+    <path d="M312 330 H498" stroke="var(--accent)" stroke-width="2.8" stroke-dasharray="14 10"/>
+
+    <!-- spool, lower left -->
+    <ellipse cx="118" cy="612" rx="40" ry="11"/>
+    <ellipse cx="118" cy="694" rx="40" ry="11"/>
+    <path d="M92 616 V690"/>
+    <path d="M144 616 V690"/>
+    <g stroke="var(--soft)" stroke-width="2.4">
+      <path d="M92 634 H144"/><path d="M92 652 H144"/><path d="M92 670 H144"/>
+    </g>
+
+    <!-- running stitch baseline -->
+    <path d="M60 726 H540" stroke="var(--accent)" stroke-width="3" stroke-dasharray="18 13"/>
+  </g>
+</svg>
