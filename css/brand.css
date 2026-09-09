@@ -100,6 +100,41 @@ table { border-collapse: collapse; width: 100%; }
 
 ::selection { background: var(--accent-tint); color: var(--ink-strong); }
 
+@media (max-width: 62rem) {
+  .shell { padding-inline: var(--s-5); }
+  .section-head { gap: var(--s-3); }
+}
+
+@media (max-width: 48rem) {
+  .site-header__inner { min-height: 60px; }
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .button-row > * { width: 100%; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-base {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 34rem) {
+  :root { --gutter: var(--s-4); }
+  .shell { padding-inline: var(--s-4); }
+  .site-header__inner { gap: var(--s-3); }
+  .panel, .panel__head {
+    padding-left: var(--s-4);
+    padding-right: var(--s-4);
+  }
+  .stats { grid-template-columns: 1fr; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
