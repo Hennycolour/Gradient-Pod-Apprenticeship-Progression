@@ -1,199 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradient POD</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Apprentice Progression</title>
+  <meta name="description" content="Contact the team about the apprenticeship record, support, or feedback.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="assets/Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/brand.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
-
 <body>
-        <header class="navdiv">
-        
-            <div class="logo"> <img src="Our logo.png" alt="logo" width="200px" height="auto"> </div>
-            
-            <ul class="nav-bar">
-                 <li><a href="#">Home</a></li> 
-                <li><a href="#">The problem</a></li>
-                <li><a href="#">How it works</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-
-            <div class="button-div"> <!-- this is button div -->
-            <button class="sign-in">
-                    <a href="#">Get Started</a>
-            </button>
-            </div> <!-- this is button div clsing -->
-        </header>
-
-        <main class="contact-main">
-
-            <div class="class-header">
-
-            <h3 id="contact-us">CONTACT US</h3>
-            <h2 id="hcontact">We'd love to hear from you</h2>
-            <p class="pnote1">Have a question, feedback, or need support?
-                <br> Fill out the form below and our team will get back to you.</p>
-            <div class="horizontal-line2"></div>
-                </div>
-
-            <form class="contact-form">
-                <div class="name-div">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-                
-                <div class="email-div">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                </div>
-
-                <div class="subject-div">
-                <label for="message">Subject</label>
-                <select name="category" id="category">
-                    <option value="">Choose a subject</option>
-                    <option value="General Enquiry">General Enquiry</option>
-                    <option value="Website Feedback">Website Feedback</option>
-                    <option value="Technical Support">Technical Support</option>
-                    <option value="Partnership">Partnership</option>
-                    <option value="Pricing / Services">Pricing / Services</option>
-                    <option value="Other">Other</option>
-                </select>
-                </div>
-                
-                <div class="message-div">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
-                </div>
-                
-                <div>
-                <button class="send-message">Send Message</button>
-                </div>
-
-            </form>
-                
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand-link" href="index.html">
+        <img class="brand-link__logo" src="assets/Logo.png" alt="" width="34" height="34">
+        <span class="brand-link__name">Apprentice Progression</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Main">
+        <ul>
+          <li><a href="about.html">Programme</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="button button--quiet" href="login.html">Log in</a>
+        <a class="button button--sm" href="signup.html">Create account</a>
+      </div>
+      <details class="nav-mobile">
+        <summary aria-label="Menu">Menu <span aria-hidden="true">&#9662;</span></summary>
+        <div class="nav-mobile__panel">
+          <a href="about.html">Programme</a>
+          <a href="directory.html">Directory</a>
+          <a href="curriculum.html">Curriculum</a>
+          <a href="workshops.html">Workshops</a>
+          <hr class="rule">
+          <a href="login.html">Log in</a>
+          <a href="signup.html">Create account</a>
         </div>
-        </main>
+      </details>
+    </div>
+  </header>
 
+  <main id="main">
+    <div class="shell shell--narrow page-head">
+      <h1>Contact us</h1>
+      <p class="lead">We would love to hear from you. Ask a question, leave feedback, or share what you need help with.</p>
+    </div>
 
+    <div class="shell shell--narrow" style="padding-bottom: var(--s-9);">
+      <form class="panel" action="saved.html" method="get">
+        <fieldset>
+          <legend>Your details</legend>
 
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+          </div>
 
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email address" autocomplete="email" required>
+          </div>
 
-      <footer class="footer-container">
-            
-                <div>
-                <div class="logo"> <img src="Our logo.png" alt="logo" width="200px" height="auto"> </div>
-                <p class="f1" >Making apprenticeship progression visible, structured and recognized from beginner to mastery.</p>
-                <div id="horizontal-line"></div>
-                    <div class="social-icon">
-                        <div class="f-div"><img class="social-div" src="icons/facebook.svg" alt=""></div>
-                        <div class="f-div"><img class="social-div" src="icons/instagram.svg" alt=""></div>
-                        <div class="f-div"><img class="social-div" src="icons/x.svg" alt=""></div>
-                        <div class="f-div"><img class="social-div"  src="icons/youtube.svg" alt="" ></div>
-                    </div>
-                </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="">Choose a subject</option>
+              <option value="general-enquiry">General enquiry</option>
+              <option value="website-feedback">Website feedback</option>
+              <option value="technical-support">Technical support</option>
+              <option value="partnership">Partnership</option>
+              <option value="pricing-services">Pricing / services</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </fieldset>
 
-                <div class="footer-nav">
-                   <div >
-                    <h3>QUICK LINKS</h3>
-                    <ul class="quick-link-list">
-                    <li>
-                        <span> <a href="#">Home</a> </span>
-                    </li>
-                     <li>
-                        <span> <a href="#">Skills</a> </span>
-                    </li>
-                     <li>
-                        <span> <a href="#">Progress</a> </span>
-                    </li>
-                     <li>
-                        <span> <a href="#">Evidence</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Contact</a> </span>
-                    </li>  
-                    </ul>  
-                </div>
+        <fieldset>
+          <legend>Your message</legend>
 
-                <div >
-                    <h3>RESOURCES</h3>
-                    <ul class="quick-link-list">
-                    <li>
-                        
-                        <span> <a href="#">Home</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">The Problem</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">How It works</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Team</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Contact</a> </span>
-                    </li>    
-                    </ul>
-                </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Type your message here" required></textarea>
+          </div>
+        </fieldset>
 
-                <div>
-                    <h3>COMPANY</h3>
-                    <ul class="quick-link-list">
-                    <li>
-                       
-                        <span> <a href="#">About Us</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Our Mission</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Privacy Policy</a> </span>
-                    </li>
-                     <li>
-                       
-                        <span> <a href="#">Terms of Use</a> </span>
-                    </li>
-                     <li>
-                       
-                        <span> <a href="#">Careers</a> </span>
-                    </li>  
-                    </ul>  
-                </div>
+        <div class="form-actions">
+          <button class="button" type="submit">Send message</button>
+          <a class="button button--ghost" href="index.html">Back to home</a>
+        </div>
+      </form>
+    </div>
+  </main>
 
-                </div>
-
-
-                <div class="stay-updated">
-                <div class="vertical-line"></div>
-                <div class="stay-updated-container">
-                    <h3>STAY UPDATED</h3>
-                    <p class="f1" >Making apprenticeship progression visible, structured and recognized from beginner to mastery.</p>
-                    <div class="subscibe-container">
-                       <div> <input id="collect-email" type="text" placeholder="Enter your email address"> </div>
-                      <div>  <button id="subscribe">Subscribe</button>  </div>
-                    </div>
-                </div>
-
-                
-                
-                
-
-                </div><!-- This is the end of the footer-nav class div -->   
-      </footer>
-   
-
-
-
-
-
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div class="footer-grid">
+        <div>
+          <p class="brand-link__name">Apprentice Progression</p>
+          <p class="small muted" style="margin-top: var(--s-3); max-width: 34ch;">
+            A shared record of what apprentice tailors have learned, who confirmed it, and what comes next.
+          </p>
+        </div>
+        <div>
+          <h2>The record</h2>
+          <ul>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Account</h2>
+          <ul>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="signup.html">Create account</a></li>
+            <li><a href="about.html">About the programme</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>Built for Gradient Pod artisans, Lagos.</p>
+        <p>HTML and CSS only &mdash; no JavaScript.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

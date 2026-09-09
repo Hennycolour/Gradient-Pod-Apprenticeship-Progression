@@ -1,150 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradient POD</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apprentice Progression</title>
+  <meta name="description" content="A visible, structured record of apprenticeship progression from beginner to mastery.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" href="assets/Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/brand.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
-
 <body>
-        <header class="navdiv">
-        
-            <div class="logo"> <img src="Our logo.png" alt="logo" width="200px" height="auto"> </div>
-            
-            <ul class="nav-bar">
-                <li><a href="#">Home</a></li> 
-                <li><a href="#">The problem</a></li>
-                <li><a href="#">How it works</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand-link" href="index.html">
+        <img class="brand-link__logo" src="assets/Logo.png" alt="" width="34" height="34">
+        <span class="brand-link__name">Apprentice Progression</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Main">
+        <ul>
+          <li><a href="about.html">Programme</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="curriculum.html">Curriculum</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="button button--quiet" href="login.html">Log in</a>
+        <a class="button button--sm" href="signup.html">Create account</a>
+      </div>
+      <details class="nav-mobile">
+        <summary aria-label="Menu">Menu <span aria-hidden="true">&#9662;</span></summary>
+        <div class="nav-mobile__panel">
+          <a href="about.html">Programme</a>
+          <a href="directory.html">Directory</a>
+          <a href="curriculum.html">Curriculum</a>
+          <a href="workshops.html">Workshops</a>
+          <hr class="rule">
+          <a href="login.html">Log in</a>
+          <a href="signup.html">Create account</a>
+        </div>
+      </details>
+    </div>
+  </header>
 
-            <div class="button-div"> <!-- this is button div -->
-            <button class="sign-in">
-                    <a href="#">Get Started</a>
-            </button>
-            </div> <!-- this is button div clsing -->
-        </header>
+  <main id="main">
+    <section class="hero">
+      <div class="shell hero__grid">
+        <div>
+          <p class="small muted">Apprentice progression, made visible</p>
+          <h1 class="hero__title">A record that proves what an apprentice can do.</h1>
+          <p class="hero__intro">
+            Apprenticeship should leave a readable trail: the skills practised, the hours put in,
+            and the masters who confirmed the work. This is the record that closes the gap between
+            learning and recognition.
+          </p>
+          <div class="hero__actions">
+            <div class="button-row">
+              <a class="button" href="signup.html">Create account</a>
+              <a class="button button--ghost" href="about.html">Learn the programme</a>
+            </div>
+          </div>
+          <p class="hero__note">
+            Every entry is tied to a workshop, a stage, and a confirming master so the record is
+            useful to apprentices, owners, and employers alike.
+          </p>
+        </div>
 
-        <main>
+        <figure class="hero__figure">
+          <img src="assets/img/hero.svg" alt="Illustration of a tailor reviewing apprenticeship progress" width="600" height="750">
+          <figcaption class="hero__caption">From the first stitch to the final fit.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        </main>
+    <section class="shell section--tight">
+      <div class="section-head">
+        <div>
+          <h2>How the programme works</h2>
+        </div>
+      </div>
 
+      <div class="steps">
+        <article class="step">
+          <h3>1. Learn the skill</h3>
+          <p>Each apprentice records the practical work they complete in the workshop, alongside the date and the hours involved.</p>
+        </article>
 
+        <article class="step">
+          <h3>2. Confirm it</h3>
+          <p>A master reviews the evidence and signs the entry, turning a memory into a verifiable milestone.</p>
+        </article>
 
+        <article class="step">
+          <h3>3. Move on</h3>
+          <p>Confirmed stages build a consistent record that can travel with the apprentice from one workshop to the next.</p>
+        </article>
+      </div>
+    </section>
 
+    <section class="shell section--tight">
+      <div class="section-head">
+        <div>
+          <h2>Six stages of progression</h2>
+        </div>
+      </div>
 
-      <footer class="footer-container">
-            
-                <div>
-                <div class="logo"> <img src="Our logo.png" alt="logo" width="200px" height="auto"> </div>
-                <p class="f1" >Making apprenticeship progression visible, structured and recognized from beginner to mastery.</p>
-                <div id="horizontal-line"></div>
-                    <div class="social-icon">
-                        <div class="f-div"><img class="social-div" src="icons/facebook.svg" alt=""></div>
-                        <div class="f-div"><img class="social-div" src="icons/instagram.svg" alt=""></div>
-                        <div class="f-div"><img class="social-div" src="icons/x.svg" alt=""></div>
-                        <div class="f-div"><img class="social-div" src="icons/youtube.svg" alt="" ></div>
-                    </div>
-                </div>
+      <div class="craft" aria-label="Programme stages">
+        <figure>
+          <img src="assets/img/stage-1.svg" alt="Stage 1 illustration" width="400" height="300" loading="lazy">
+          <figcaption><span class="n">Stage 1</span><br><span class="t">Foundation</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/stage-2.svg" alt="Stage 2 illustration" width="400" height="300" loading="lazy">
+          <figcaption><span class="n">Stage 2</span><br><span class="t">Fabric prep</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/stage-3.svg" alt="Stage 3 illustration" width="400" height="300" loading="lazy">
+          <figcaption><span class="n">Stage 3</span><br><span class="t">Cutting</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/stage-4.svg" alt="Stage 4 illustration" width="400" height="300" loading="lazy">
+          <figcaption><span class="n">Stage 4</span><br><span class="t">Making</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/stage-5.svg" alt="Stage 5 illustration" width="400" height="300" loading="lazy">
+          <figcaption><span class="n">Stage 5</span><br><span class="t">Construction</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/stage-6.svg" alt="Stage 6 illustration" width="400" height="300" loading="lazy">
+          <figcaption><span class="n">Stage 6</span><br><span class="t">Finishing</span></figcaption>
+        </figure>
+      </div>
+    </section>
 
-                <div class="footer-nav">
-                   <div >
-                    <h3>QUICK LINKS</h3>
-                    <ul class="quick-link-list">
-                  <li>
-                        <span> <a href="#">Home</a> </span>
-                    </li>
-                     <li>
-                        <span> <a href="#">The problem</a> </span>
-                    </li>
-                     <li>
-                        <span> <a href="#">How it works</a> </span>
-                    </li>
-                     <li>
-                        <span> <a href="#">Team</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Contact</a> </span>
-                    </li>   
-                    </ul>  
-                </div>
+    <section class="shell section--tight">
+      <div class="cta-panel">
+        <h2>Build the record before the skill is forgotten.</h2>
+        <p>Every entry matters. A clear record helps apprentices prove their learning, and helps workshops recognise the work being done.</p>
+        <div class="button-row">
+          <a class="button" href="signup.html">Get started</a>
+          <a class="button button--ghost" href="directory.html">See the directory</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                <div >
-                    <h3>RESOURCES</h3>
-                    <ul class="quick-link-list">
-                    <li>
-                        
-                        <span> <a href="#">Learning Hub</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Guides</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Blog</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">FAQs</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Support</a> </span>
-                    </li>    
-                    </ul>
-                </div>
-
-                <div>
-                    <h3>COMPANY</h3>
-                    <ul class="quick-link-list">
-                    <li>
-                       
-                        <span> <a href="#">About Us</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Our Mission</a> </span>
-                    </li>
-                     <li>
-                        
-                        <span> <a href="#">Privacy Policy</a> </span>
-                    </li>
-                     <li>
-                       
-                        <span> <a href="#">Terms of Use</a> </span>
-                    </li>
-                     <li>
-                       
-                        <span> <a href="#">Careers</a> </span>
-                    </li>  
-                    </ul>  
-                </div>
-
-                </div>
-
-
-                <div class="stay-updated">
-                <div class="vertical-line"></div>
-                <div class="stay-updated-container">
-                    <h3>STAY UPDATED</h3>
-                    <p class="f1" >Making apprenticeship progression visible, structured and recognized from beginner to mastery.</p>
-                    <div class="subscibe-container">
-                       <div> <input id="collect-email" type="text" placeholder="Enter your email address"> </div>
-                      <div>  <button id="subscribe">Subscribe</button>  </div>
-                    </div>
-                </div>
-
-                
-                
-                
-
-                </div><!-- This is the end of the footer-nav class div -->   
-      </footer>
-   
-
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div class="footer-grid">
+        <div>
+          <p class="brand-link__name">Apprentice Progression</p>
+          <p class="small muted" style="margin-top: var(--s-3); max-width: 34ch;">
+            A shared record of what apprentice tailors have learned, who confirmed it, and what comes next.
+          </p>
+        </div>
+        <div>
+          <h2>The record</h2>
+          <ul>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Account</h2>
+          <ul>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="signup.html">Create account</a></li>
+            <li><a href="about.html">About the programme</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>Built for Gradient Pod artisans, Lagos.</p>
+        <p>HTML and CSS only &mdash; no JavaScript.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
