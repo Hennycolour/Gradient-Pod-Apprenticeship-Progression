@@ -25,6 +25,7 @@ Everything below works right now, with no backend. Start at `index.html`.
 |               | `signup.html`                               | Role choice, workshop picker, validation         |
 |               | `forgot-password.html` → `check-email.html` | Password reset flow                              |
 | **Signed in** | `dashboard.html`                            | The master's overview                            |
+|               | `dashboard-apprentice.html`                 | Zainab Ibrahim's apprentice dashboard            |
 |               | `confirmations.html`                        | Approval queue                                   |
 |               | `record.html` → `saved.html`                | Log a milestone                                  |
 |               | `settings.html`                             | **Tabbed settings, no JS**                       |

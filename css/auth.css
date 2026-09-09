@@ -40,6 +40,34 @@
 
 .auth__submit { margin-top: var(--s-6); }
 
+.role-state {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+#role-apprentice:focus-visible ~ .choice label[for="role-apprentice"],
+#role-master:focus-visible ~ .choice label[for="role-master"],
+#email-role-apprentice:focus-visible ~ .choice label[for="email-role-apprentice"],
+#email-role-master:focus-visible ~ .choice label[for="email-role-master"] { outline: var(--ring); outline-offset: 3px; }
+.choice label { cursor: pointer; }
+#role-apprentice:checked ~ .choice label[for="role-apprentice"],
+#role-master:checked ~ .choice label[for="role-master"],
+#email-role-apprentice:checked ~ .choice label[for="email-role-apprentice"],
+#email-role-master:checked ~ .choice label[for="email-role-master"] {
+  border-color: var(--accent); background: var(--accent-tint);
+}
+.role-submit--master { display: none; }
+#role-master:checked ~ .auth__submit .role-submit--apprentice { display: none; }
+#role-master:checked ~ .auth__submit .role-submit--master { display: block; }
+
+.email-role-choice { margin-top: var(--s-6); text-align: left; }
+.email-role-choice > legend {
+  margin-bottom: var(--s-4); font-family: var(--font-display);
+  font-size: var(--text-md); font-weight: 600; color: var(--ink-strong);
+}
+.email-role-path--master { display: none; }
+#email-role-master:checked ~ .button-row .email-role-path--apprentice { display: none; }
+#email-role-master:checked ~ .button-row .email-role-path--master { display: inline-flex; }
+
 .auth__alt {
   margin-top: var(--s-6); padding-top: var(--s-5);
   border-top: 1px solid var(--line);

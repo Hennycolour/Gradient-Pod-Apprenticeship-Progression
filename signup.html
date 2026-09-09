@@ -36,23 +36,22 @@
           <form action="check-email.html" method="get">
             <fieldset>
               <legend>I am</legend>
+              <input class="role-state" type="radio" name="role" id="role-apprentice" checked>
+              <input class="role-state" type="radio" name="role" id="role-master">
               <div class="choice">
                 <div class="choice__item">
-                  <input type="radio" name="role" id="role-apprentice" checked>
                   <label for="role-apprentice">
                     <strong>An apprentice</strong>
                     <span>Learning the trade in a workshop</span>
                   </label>
                 </div>
                 <div class="choice__item">
-                  <input type="radio" name="role" id="role-master">
                   <label for="role-master">
                     <strong>A master tailor</strong>
                     <span>I confirm the work of apprentices</span>
                   </label>
                 </div>
               </div>
-            </fieldset>
 
             <fieldset>
               <legend>Your details</legend>
@@ -93,7 +92,6 @@
                        autocomplete="new-password" aria-describedby="pw-hint" required>
               </div>
             </fieldset>
-
             <div class="field" style="margin-top: var(--s-6);">
               <label class="check">
                 <input type="checkbox" name="terms" value="yes" required>
@@ -102,8 +100,10 @@
             </div>
 
             <div class="auth__submit">
-              <button class="button button--block" type="submit">Create account</button>
+              <button class="button button--block role-submit role-submit--apprentice" type="submit" formaction="check-email.html">Create account</button>
+              <button class="button button--block role-submit role-submit--master" type="submit" formaction="check-email.html">Create account</button>
             </div>
+            </fieldset>
           </form>
 
           <p class="auth__alt">
