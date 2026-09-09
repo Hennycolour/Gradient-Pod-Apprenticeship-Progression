@@ -12,23 +12,23 @@ Open `index.html` in a browser and the whole thing runs.
 
 Everything below works right now, with no backend. Start at `index.html`.
 
-| Route | | |
-|---|---|---|
-| **Public** | `index.html` | Landing page |
-| | `about.html` | How the programme works |
-| | `directory.html` | All apprentices — **filterable by stage, no JS** |
-| | `apprentice.html` | One apprentice's full record |
-| | `skill.html` | One confirmed skill, its evidence and sign-off |
-| | `curriculum.html` | Six stages, 31 skills — **accordion, no JS** |
-| | `workshops.html` | The five workshops on the register |
-| **Auth** | `login.html` | Any email + password signs you in |
-| | `signup.html` | Role choice, workshop picker, validation |
-| | `forgot-password.html` → `check-email.html` | Password reset flow |
-| **Signed in** | `dashboard.html` | The master's overview |
-| | `confirmations.html` | Approval queue |
-| | `record.html` → `saved.html` | Log a milestone |
-| | `settings.html` | **Tabbed settings, no JS** |
-| **Utility** | `404.html` | Not found |
+| Route         |                                             |                                                  |
+| ------------- | ------------------------------------------- | ------------------------------------------------ |
+| **Public**    | `index.html`                                | Landing page                                     |
+|               | `about.html`                                | How the programme works                          |
+|               | `directory.html`                            | All apprentices — **filterable by stage, no JS** |
+|               | `apprentice.html`                           | One apprentice's full record                     |
+|               | `skill.html`                                | One confirmed skill, its evidence and sign-off   |
+|               | `curriculum.html`                           | Six stages, 31 skills — **accordion, no JS**     |
+|               | `workshops.html`                            | The five workshops on the register               |
+| **Auth**      | `login.html`                                | Any email + password signs you in                |
+|               | `signup.html`                               | Role choice, workshop picker, validation         |
+|               | `forgot-password.html` → `check-email.html` | Password reset flow                              |
+| **Signed in** | `dashboard.html`                            | The master's overview                            |
+|               | `confirmations.html`                        | Approval queue                                   |
+|               | `record.html` → `saved.html`                | Log a milestone                                  |
+|               | `settings.html`                             | **Tabbed settings, no JS**                       |
+| **Utility**   | `404.html`                                  | Not found                                        |
 
 The demo account is **Mrs. Bello, a master tailor** — she is the one with a confirmation
 queue, which is why the signed-in pages are hers.
@@ -39,7 +39,7 @@ css/
   app.css     layouts for the product pages
   home.css    landing page only
   auth.css    log in / sign up / reset
-img/
+assets/img/
   hero.svg, stage-1…6.svg   drawn for this project; see note below
 ```
 
@@ -47,7 +47,7 @@ img/
 
 # Corrections — read this part
 
-What I changed and, more importantly, **why**. The *why* is the bit worth keeping.
+What I changed and, more importantly, **why**. The _why_ is the bit worth keeping.
 
 ## 1. Bugs that were breaking the page
 
@@ -59,7 +59,7 @@ What I changed and, more importantly, **why**. The *why* is the bit worth keepin
 ```
 
 A browser will not tell you about this. It silently repairs the document and carries on, so
-the page *looks* fine while the DOM is not what you wrote. **Validate your HTML before you
+the page _looks_ fine while the DOM is not what you wrote. **Validate your HTML before you
 call a page done.** All 17 pages now parse with balanced tags.
 
 **Card 5 had an anchor closed twice with another nested inside it:**
@@ -72,7 +72,7 @@ call a page done.** All 17 pages now parse with balanced tags.
 </a>                                            <!-- and closed again -->
 ```
 
-Nested anchors are invalid; the browser's repair moves the text *outside* the link, so that
+Nested anchors are invalid; the browser's repair moves the text _outside_ the link, so that
 card's call to action was not clickable at all.
 
 **Three links pointed at files that did not exist:** `details.html` (the file was
@@ -86,9 +86,15 @@ You had **three** stylesheets defining tokens, in two different naming schemes f
 colours:
 
 ```css
-/* css/brand.css */   --color-navy: #1B3A57;   --space-3: 1rem;
-/* css/main.css   */  --brand:      #1B3A57;   --s2: 16px;
-/* main-brand.css */  --brand:      #1B3A57;   --s2: 16px;   /* exact duplicate */
+/* css/brand.css */
+--color-navy: #1b3a57;
+--space-3: 1rem;
+/* css/main.css   */
+--brand: #1b3a57;
+--s2: 16px;
+/* main-brand.css */
+--brand: #1b3a57;
+--s2: 16px; /* exact duplicate */
 ```
 
 Worse, `css/main.css` contained rules using `--color-navy` and `--space-3` — tokens it never
@@ -101,7 +107,7 @@ entire point of tokens, and three copies throws it away.
 ## 3. It was a brochure, not a product
 
 The original was four pages: a welcome screen, a form, a card grid and a detail page. There
-was no way to sign in, no account, no dashboard, no way for a master to actually *confirm*
+was no way to sign in, no account, no dashboard, no way for a master to actually _confirm_
 anything — even though "confirmed by a master" is the whole idea.
 
 A product this shape needs, at minimum: a way in (**log in / sign up / password reset**), a
@@ -128,13 +134,18 @@ JavaScript**:
 
 ```html
 <!-- the radios hold the state; they must come BEFORE what they control -->
-<input class="filter-input" type="radio" name="stage" id="stage-3">
+<input class="filter-input" type="radio" name="stage" id="stage-3" />
 <div class="filter-bar"><label for="stage-3">Stage 3</label></div>
 <div class="roster"><article class="card" data-stage="3">…</article></div>
 ```
+
 ```css
-#stage-3:checked ~ .roster .card                 { display: none; }
-#stage-3:checked ~ .roster .card[data-stage="3"] { display: flex; }
+#stage-3:checked ~ .roster .card {
+  display: none;
+}
+#stage-3:checked ~ .roster .card[data-stage="3"] {
+  display: flex;
+}
 ```
 
 `~` only looks **forward** among siblings — that is why the inputs are written first. The
@@ -153,33 +164,45 @@ three chances to be wrong at a size you never tested.
 
 ```css
 /* before */
-.apprentice-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-@media (max-width:900px){ .apprentice-grid{ grid-template-columns: repeat(2,minmax(0,1fr)); } }
-@media (max-width:620px){ .apprentice-grid{ grid-template-columns: 1fr; } }
+.apprentice-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .apprentice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .apprentice-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* after — one rule, no breakpoints, correct at every width */
-.roster { grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); }
+.roster {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+}
 ```
 
 Two details in that line that took me a moment to get right:
 
 - **`auto-fill`, not `auto-fit`.** `auto-fit` collapses empty tracks, so when the filter
   leaves one card visible it stretches across the entire row and the illustration becomes
-  enormous. I only caught this by screenshotting the *filtered* state. **Test your states,
+  enormous. I only caught this by screenshotting the _filtered_ state. **Test your states,
   not just your default view.**
 - **`min(100%, 17rem)`**, not bare `17rem` — a bare floor overflows viewports narrower than
   17rem.
 
 Your breakpoints were also in `px` while the rest of the file used `rem`. If someone raises
 their default font size, `rem` breakpoints adapt and `px` ones do not. All breakpoints are
-now `rem`, chosen by *where the layout actually breaks*.
+now `rem`, chosen by _where the layout actually breaks_.
 
 There is a real mobile menu now, too — the old nav just wrapped and hoped.
 
 ## 6. Type: a font should say what the product is
 
 Fraunces and Georgia are warm and bookish. This is a **fashion** product, so the display
-face is now **Bodoni Moda** — a Didone, the genre *Vogue* and *Harper's Bazaar* built their
+face is now **Bodoni Moda** — a Didone, the genre _Vogue_ and _Harper's Bazaar_ built their
 mastheads from, with the extreme thick/thin contrast that reads as fashion at a glance.
 **Jost** — a geometric sans in the Futura line that fashion houses lean on — does all the
 interface work.
@@ -205,22 +228,26 @@ The background is now **white** (`--paper: #FFFFFF`), with near-black ink and a 
 terracotta accent. Black buttons, hairline rules, flat fills. No gradients anywhere — I
 check for that mechanically too.
 
-Your terracotta `#D9822B` was about **3.0:1** on the old cream. WCAG AA needs **4.5:1** for
-normal text. Every colour token is now measured and annotated in `brand.css`:
+The logo was sampled directly: navy `#122D4B`, amber `#DA8D1B`, and terracotta `#CD5427`.
+The exact amber is decorative-only on white at **2.69:1**, and exact terracotta is reserved
+for large/UI decoration at **4.29:1**. Text uses the separately named safe role tokens.
+Every colour token is measured and annotated in `brand.css`:
 
-| | light | dark |
-|---|---|---|
-| body ink | 17.9:1 | 15.2:1 |
-| muted text | 6.9:1 | 7.3:1 |
-| accent | 5.8:1 | 7.5:1 |
-| confirmed / warning | 6.5:1 / 5.9:1 | 9.4:1 / 9.4:1 |
+|                        | light                            | dark             |
+| ---------------------- | -------------------------------- | ---------------- |
+| navy / white fill text | 13.98:1                          | 13.98:1 on navy  |
+| body ink               | 17.89:1                          | 17.89:1 on white |
+| muted text             | 6.85:1                           | 6.85:1 on white  |
+| safe accent text       | 5.78:1                           | 5.78:1 on white  |
+| logo amber / navy      | 2.69:1 on white / 5.20:1 on navy | 5.20:1           |
+| logo terracotta / navy | 4.29:1 on white / 3.26:1 on navy | 3.26:1           |
 
 **Never let colour be the only signal.** The status pills say "Confirmed", "Awaiting
 confirmation", "Not started" — someone who cannot tell the hues apart still gets the
 information from the words.
 
 **A bug I introduced and had to fix, because it teaches more than the clean code does:** I
-added a dark mode by swapping tokens, and `--brand` flips from dark navy to *light* blue.
+added a dark mode by swapping tokens, and `--brand` flips from dark navy to _light_ blue.
 But the primary button used `--brand` as its **background** with light text — so in dark mode
 it became light-on-light, about **1.4:1**. The lesson: **a token meaning "brand text colour"
 cannot double as "brand fill colour"**, because the two invert in opposite directions. They
@@ -269,9 +296,9 @@ directory, or delete them.
 `request.html` shipped a `<script>` block, which the brief does not allow:
 
 ```js
-document.querySelector('.form').addEventListener('submit', function (event) {
+document.querySelector(".form").addEventListener("submit", function (event) {
   event.preventDefault();
-  document.querySelector('#confirmation').hidden = false;
+  document.querySelector("#confirmation").hidden = false;
 });
 ```
 
@@ -280,7 +307,7 @@ and what a server-backed form would do anyway.
 
 Also added: `autocomplete` so browsers can fill fields in, `inputmode="numeric"` for number
 pads on phones, `min`/`max`, `<datalist>` for the workshop picker, fields grouped into
-labelled `<fieldset>`s, and *optional* marked instead of *required* — on these forms nearly
+labelled `<fieldset>`s, and _optional_ marked instead of _required_ — on these forms nearly
 everything is required, so marking the exception is less visual noise.
 
 Validation uses **`:user-invalid`, not `:invalid`**. `:invalid` turns a required field red
@@ -288,20 +315,28 @@ the instant the page loads — telling someone off for something they have not d
 
 **Two CSS traps I hit while building this**, both worth knowing:
 
-*A `<legend>` is laid out inside its fieldset's top border*, so a `border-top` on the
+_A `<legend>` is laid out inside its fieldset's top border_, so a `border-top` on the
 fieldset draws straight through the heading text. Float it to escape the notch:
 
 ```css
-fieldset > legend { float: left; width: 100%; border-bottom: 1px solid var(--line); }
-fieldset > legend + * { clear: both; }   /* a float must be cleared */
+fieldset > legend {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+}
+fieldset > legend + * {
+  clear: both;
+} /* a float must be cleared */
 ```
 
-*A stacking margin fires inside a grid.* I had `.field + .field { margin-top: 1.5rem }` for
+_A stacking margin fires inside a grid._ I had `.field + .field { margin-top: 1.5rem }` for
 vertical stacking, but in a two-column `.field-row` that margin pushed the second column
 down and the two inputs stopped lining up:
 
 ```css
-.field-row > .field + .field { margin-top: 0; }
+.field-row > .field + .field {
+  margin-top: 0;
+}
 ```
 
 ## 11. Naming and dead code
@@ -348,4 +383,4 @@ lecturing you about dead CSS would have been a poor look.
 Your original had real instincts in it: the six-stage model, the progress meter, the
 confirmed-by-a-master idea, and the decision to use CSS custom properties at all. Those were
 the right calls, and they are all still here. What needed work was the discipline underneath
-them — and the ambition about what the thing actually had to *do*.
+them — and the ambition about what the thing actually had to _do_.

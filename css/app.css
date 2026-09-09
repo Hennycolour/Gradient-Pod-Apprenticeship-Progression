@@ -171,8 +171,8 @@
   padding-top: var(--s-3); border-top: 4px solid var(--line);
   font-size: var(--text-sm); color: var(--ink-muted);
 }
-.ladder__step--done    { border-top-color: var(--ink); color: var(--ink); }
-.ladder__step--current { border-top-color: var(--accent); color: var(--ink-strong); font-weight: 500; }
+.ladder__step--done    { border-top-color: var(--color-navy); color: var(--color-navy); }
+.ladder__step--current { border-top-color: var(--color-terracotta); color: var(--ink-strong); font-weight: 500; }
 .ladder__label { display: block; }
 /* Six labels will not fit on a phone; show the numbers and keep the names
    available to screen readers. */

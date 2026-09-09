@@ -9,8 +9,14 @@
 :root {
   color-scheme: light;   /* never hand the page to the OS dark palette */
 
-  /* Colour. Flat only — no gradients anywhere in this project.
-     Ratios are measured against --paper. */
+    /* Colour. Flat only — no gradients anywhere in this project.
+      Logo samples: navy #122D4B, amber #DA8D1B, terracotta #CD5427.
+      Exact amber is decorative-only on white (2.69:1); exact terracotta
+      is decorative/UI-only on white (4.29:1). Text uses safe role tokens.
+      Light ratios: navy/white 13.98:1, safe accent/white 5.78:1,
+      muted/white 6.85:1, fill-ink/navy 13.98:1.
+      Dark-surface checks: amber/navy 5.20:1, terracotta/navy 3.26:1
+      (large text/UI only), white/navy 13.98:1. */
   --paper:        #FFFFFF;
   --surface:      #FFFFFF;
   --surface-sunk: #FFFFFF;   /* kept as a name so callers need no edit */
@@ -19,8 +25,12 @@
   --ink-muted:    #5A5A60;   /* secondary       —  6.9:1          */
   --line:         #E7E5E3;
   --line-strong:  #C9C6C2;
-  --accent:       #A9481F;   /* terracotta      —  5.8:1          */
+  --color-navy:   #122D4B;   /* exact logo navy   — 13.98:1 on paper */
+  --color-gold:   #DA8D1B;   /* exact logo amber  — decorative only   */
+  --color-terracotta: #CD5427; /* exact logo bar — decorative/UI only */
+  --accent:       #A9481F;   /* safe terracotta text — 5.78:1 on paper */
   --accent-tint:  #FFFFFF;
+  --gold-ink:     #8A5A00;   /* safe gold text    — 5.93:1 on paper */
   --positive:     #1E6B45;   /*                 —  6.5:1          */
   --positive-tint:#FFFFFF;
   --warn:         #8A5A00;   /*                 —  5.9:1          */
@@ -29,7 +39,7 @@
   /* Solid fills. --ink/--accent are TEXT colours and invert in dark
      mode; anything used as a BACKGROUND needs its own pair so the two
      can be swapped independently. */
-  --fill:       #111114;
+  --fill:       var(--color-navy);
   --fill-hover: #34343C;
   --fill-ink:   #FFFFFF;
 
@@ -199,6 +209,22 @@ p + p { margin-top: var(--s-4); }
   margin-bottom: var(--s-6);
 }
 .section-head p { margin-top: var(--s-3); color: var(--ink-muted); max-width: 48ch; }
+
+/* A restrained thread echo for existing page/footer boundaries. */
+.thread-rule { position: relative; }
+.page-head.thread-rule::after,
+.site-footer.thread-rule::before {
+  content: '';
+  display: block;
+  width: min(8rem, 32vw);
+  height: 7px;
+  border-top: 1px dashed var(--color-gold);
+  border-radius: 50%;
+  transform: rotate(-2deg);
+  opacity: .9;
+}
+.page-head.thread-rule::after { margin-top: var(--s-2); }
+.site-footer.thread-rule::before { margin-bottom: var(--s-5); }
 
 /* ---------- 5. Utilities ----------------------------------- */
 
@@ -408,7 +434,7 @@ fieldset + fieldset { margin-top: var(--s-7); }
 }
 /* The value arrives as a custom property (style="--value:78") so the
    markup stays declarative and the CSS owns the presentation. */
-.meter__fill { height: 100%; width: calc(var(--value, 0) * 1%); background: var(--accent); border-radius: inherit; }
+.meter__fill { height: 100%; width: calc(var(--value, 0) * 1%); background: var(--color-terracotta); border-radius: inherit; }
 .meter--lg { height: 12px; }
 
 .meter-label {
