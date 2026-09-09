@@ -94,3 +94,14 @@
   font-size: var(--text-sm);
 }
 .demo-hint code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+
+.demo-accounts { margin-top: var(--s-6); }
+.demo-accounts h2 { font-family: var(--font-body); font-size: var(--text-base); font-weight: 500; }
+.demo-accounts__list { display: grid; gap: var(--s-2); margin-top: var(--s-3); }
+.demo-account {
+  display: block; padding: var(--s-3); border: 1px solid var(--line);
+  border-radius: var(--radius-sm); background: var(--surface);
+  text-decoration: none; transition: border-color 160ms ease, background-color 160ms ease;
+}
+.demo-account:hover, .demo-account:focus-visible { border-color: var(--accent); background: var(--accent-tint); }
+.demo-account .person__name, .demo-account .person__meta { display: block; }

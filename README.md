@@ -21,11 +21,14 @@ Everything below works right now, with no backend. Start at `index.html`.
 |               | `skill.html`                                | One confirmed skill, its evidence and sign-off   |
 |               | `curriculum.html`                           | Six stages, 31 skills — **accordion, no JS**     |
 |               | `workshops.html`                            | The five workshops on the register               |
-| **Auth**      | `login.html`                                | Any email + password signs you in                |
+| **Auth**      | `login.html`                                | Named demo account picker                        |
 |               | `signup.html`                               | Role choice, workshop picker, validation         |
 |               | `forgot-password.html` → `check-email.html` | Password reset flow                              |
 | **Signed in** | `dashboard.html`                            | The master's overview                            |
-|               | `dashboard-apprentice.html`                 | Zainab Ibrahim's apprentice dashboard            |
+|               | `dashboard-master-ade.html`                 | Mr. Ade's workshop dashboard                     |
+|               | `dashboard-apprentice-zainab.html`          | Zainab Ibrahim's apprentice dashboard            |
+|               | `dashboard-apprentice-tunde.html`           | Tunde Adeyemi's apprentice dashboard             |
+|               | `dashboard-apprentice-david.html`           | David Eze's apprentice dashboard                 |
 |               | `confirmations.html`                        | Approval queue                                   |
 |               | `record.html` → `saved.html`                | Log a milestone                                  |
 |               | `settings.html`                             | **Tabbed settings, no JS**                       |
